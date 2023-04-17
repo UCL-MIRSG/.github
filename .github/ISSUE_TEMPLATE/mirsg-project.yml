@@ -1,0 +1,19 @@
+name: Project
+description: Create a new MIRSG project record
+title: "[PROJECT]: "
+labels: ["project"]
+body:
+  - type: textarea
+    id: project-summary
+    attributes:
+      label: Brief summary of project
+      description: Briefly describe what this project is about
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        ```[tasklist]
+        ### Connected ARC Opportunities
+        - [ ] https://github.com/UCL-ARC/research-software-opportunities/issues/XXX
+        ```
