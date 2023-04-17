@@ -7,6 +7,7 @@ The Medical Imaging Research Software Group (MIRSG) is a sub-group of the ARC Co
 ### Planning Work
 
 - All development and operational work is planned and tracked on GitHub
+- The [MIRSG GitHub Project](https://github.com/orgs/UCL-MIRSG/projects/3) provides views across all our activities.
 
 ### Recording XNAT and OMERO Projects
 
