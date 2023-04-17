@@ -28,11 +28,10 @@ body:
   - type: markdown
     attributes:
       value: |
-        "### Linked Issues
         ```[tasklist]
         #### Related Issues
         - [ ] https://github.com/UCL-MIRSG/MIRSG/issues/xxx
-        ```"
+        ```
   - type: checkboxes
     id: request-type
     attributes:
