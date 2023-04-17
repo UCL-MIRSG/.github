@@ -10,12 +10,12 @@ The Medical Imaging Research Software Group (MIRSG) is a sub-group of the ARC Co
 
 ### Recording XNAT and OMERO Projects
 
-- Every study/project managed on a MIRSG run XNAT or OMERO instance should have a project record tracked as a *[PROJREC]* issue in this repository
+- Every study/project managed on a MIRSG run XNAT or OMERO instance should have a project record tracked as a [**[PROJREC]** issue in this repository](https://github.com/UCL-MIRSG/MIRSG/issues/new?assignees=&labels=project-record&template=mirsg-project.md&title=%5BPROJREC%5D%3A+%3Ctitle%3E)
 - Each MIRSG Project Record may be linked to 0 or more related [issues on the ARC Opportunities Tracker](https://github.com/UCL-ARC/research-software-opportunities/issues).
 
 ### Tracking Requests
 
-- Non-trivial requests received should be tracked as a *[REQUEST]* issue in this repository
+- Non-trivial requests received should be tracked as a [*[REQUEST]* issue in this repository](https://github.com/UCL-MIRSG/MIRSG/issues/new?assignees=&labels=request&template=request.yml&title=%5BREQUEST%5D%3A+)
 - Important actions and internal discussions should be recorded as comments on the request issue itself.
 - If a request is routine and easily resolved there is no need to create an issue.
 - Requests may result in the identification of bugs, feature requests, configuration changes or other tasks - these should be tracked as indicated in [Tracking Issues](#tracking-issues).
