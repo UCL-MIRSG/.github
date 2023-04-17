@@ -29,7 +29,6 @@ body:
     attributes:
       value: |
         ```[tasklist]
-        #### Related Issues
         - [ ] https://github.com/UCL-MIRSG/MIRSG/issues/xxx
         ```
   - type: checkboxes
