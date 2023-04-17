@@ -27,7 +27,7 @@ body:
         - Verbally
   - type: markdown
     attributes:
-      value: |
+      value: >
         ```[tasklist]
         - [ ] https://github.com/UCL-MIRSG/MIRSG/issues/xxx
         ```
