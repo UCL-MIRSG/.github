@@ -15,7 +15,7 @@ The Medical Imaging Research Software Group (MIRSG) is a sub-group of the ARC Co
 
 ### Tracking Requests
 
-- Non-trivial requests received should be tracked as a [*[REQUEST]* issue in this repository](https://github.com/UCL-MIRSG/MIRSG/issues/new?assignees=&labels=request&template=request.yml&title=%5BREQUEST%5D%3A+)
+- Non-trivial requests received should be tracked as a [**[REQUEST]** issue in this repository](https://github.com/UCL-MIRSG/MIRSG/issues/new?assignees=&labels=request&template=request.yml&title=%5BREQUEST%5D%3A+)
 - Important actions and internal discussions should be recorded as comments on the request issue itself.
 - If a request is routine and easily resolved there is no need to create an issue.
 - Requests may result in the identification of bugs, feature requests, configuration changes or other tasks - these should be tracked as indicated in [Tracking Issues](#tracking-issues).
