@@ -6,7 +6,7 @@ body:
   - type: textarea
     id: request-description
     attributes:
-      label: Description of request
+      label: Request Description
       description: Describe the request as succinctly as possible
       placeholder: A request to...
     validations:
@@ -16,19 +16,6 @@ body:
     attributes:
       label: Request reporter
       description: Who is the request coming from?
-  - type: checkboxes
-    id: request-type
-    attributes:
-      label: Type of request
-      description: What type of request is this (check all that apply)
-      options:
-      - label: XNAT
-      - label: OMERO
-      - label: Software Development
-      - label: Account & Project Configuration
-      - label: Data download and upload
-      - label: Information Governance
-      - label: Data De-identification 
   - type: textarea
     id: related-issues
     attributes: 
@@ -36,4 +23,10 @@ body:
       description: Add issues and links related to this request
       value: |
        * 
+  - type: textarea
+    id: request-resolution
+    attributes:
+      label: Resolution
+      description: Describe how the request was completed
+      placeholder: This request was completed by...
 
