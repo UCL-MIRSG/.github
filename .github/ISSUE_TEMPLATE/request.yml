@@ -1,0 +1,48 @@
+name: Service Request
+description: A service request to the MIRSG team
+title: "[REQUEST]: "
+labels: ["request"]
+body:
+  - type: textarea
+    id: request-description
+    attributes:
+      label: Description of request
+      description: Describe the request as succinctly as possible
+      placeholder: A request to...
+    validations:
+      required: true
+  - type: input
+    id: reporter
+    attributes:
+      label: Request reporter
+      description: Who is the request coming from?
+  - type: dropdown
+    id: source
+    attributes:
+      label: Request source
+      description: How was the request received?
+      options:
+        - MIRSG shared mailbox
+        - Direct email
+        - Verbally
+  - type: checkboxes
+    id: request-type
+    attributes:
+      label: Type of request
+      description: What type of request is this (check all that apply)
+      options:
+      - label: XNAT
+      - label: OMERO
+      - label: Software Development
+      - label: Account & Project Configuration
+      - label: Data download and upload
+      - label: Information Governance
+      - label: Data De-identification 
+  - type: markdown
+    attributes:
+      value: |
+        ### Linked Issues
+        ```[tasklist]
+        #### Related Issues
+        - [ ] https://github.com/UCL-MIRSG/MIRSG/issues/xxx
+        ```
