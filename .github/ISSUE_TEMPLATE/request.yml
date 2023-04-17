@@ -16,21 +16,6 @@ body:
     attributes:
       label: Request reporter
       description: Who is the request coming from?
-  - type: dropdown
-    id: source
-    attributes:
-      label: Request source
-      description: How was the request received?
-      options:
-        - MIRSG shared mailbox
-        - Direct email
-        - Verbally
-  - type: markdown
-    attributes:
-      value: >
-        ```[tasklist]
-        - [ ] https://github.com/UCL-MIRSG/MIRSG/issues/xxx
-        ```
   - type: checkboxes
     id: request-type
     attributes:
@@ -44,3 +29,11 @@ body:
       - label: Data download and upload
       - label: Information Governance
       - label: Data De-identification 
+  - type: textarea
+    id: related-issues
+    attributes: 
+      label: Related Issues
+      description: Add issues and links related to this request
+      value: |
+       * 
+
