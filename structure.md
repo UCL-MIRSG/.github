@@ -5,7 +5,7 @@ classDiagram
   direction LR
 
     class Opportunity{
-        <<Collaborations>>
+        <<Collaborations Tracker>>
     }
     
     class `Project Record`{
@@ -29,7 +29,7 @@ classDiagram
     note for Code "This will often be the main \n XNAT and OMERO related repos"
 
     Opportunity  --> `Project Record` : Funds
-    `Project Record`  --> `Service Request`: Receives
+    `Project Record`  --> `Service Request`: Has related
     `Service Request` --> Issue: May identify
     `Project Record` --> Code: May have
     Code --> Issue: has
