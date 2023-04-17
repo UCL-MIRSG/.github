@@ -25,6 +25,14 @@ body:
         - MIRSG shared mailbox
         - Direct email
         - Verbally
+  - type: markdown
+    attributes:
+      value: |
+        ### Linked Issues
+        ```[tasklist]
+        #### Related Issues
+        - [ ] https://github.com/UCL-MIRSG/MIRSG/issues/xxx
+        ```
   - type: checkboxes
     id: request-type
     attributes:
@@ -38,11 +46,3 @@ body:
       - label: Data download and upload
       - label: Information Governance
       - label: Data De-identification 
-  - type: markdown
-    attributes:
-      value: |
-        ### Linked Issues
-        ```[tasklist]
-        #### Related Issues
-        - [ ] https://github.com/UCL-MIRSG/MIRSG/issues/xxx
-        ```
