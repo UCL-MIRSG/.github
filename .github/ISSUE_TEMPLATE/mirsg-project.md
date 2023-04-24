@@ -1,7 +1,7 @@
 ---
 name: MIRSG Project Record
 about: Create a new MIRSG project record
-title: "[PROJREC]: <title>"
+title: "[PROJ-REC]: <title>"
 labels: project-record
 assignees: ""
 ---
@@ -18,6 +18,8 @@ assignees: ""
 
 ### Project Documentation and Details
 <!-- Additional information relevant to the project - linking out where needed-->
+
+- [Project Folder on Sharepoint](#)
 
 #### Related XNAT & OMERO Project links
 <!-- Link to related external XNAT and OMERO project links-->
