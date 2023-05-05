@@ -1,7 +1,7 @@
 ---
 name: MIRSG Project Record
 about: Create a new MIRSG project record
-title: "[PROJ-REC]: <title>"
+title: "💼 [RECORD]: <title>"
 labels: project-record
 assignees: ""
 ---

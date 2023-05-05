@@ -1,6 +1,6 @@
 name: Service Request
 description: A service request to the MIRSG team
-title: "[REQUEST]: "
+title: "📥 [REQUEST]: "
 labels: ["request"]
 body:
   - type: textarea

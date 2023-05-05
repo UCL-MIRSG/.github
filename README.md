@@ -9,10 +9,11 @@ The Medical Imaging Research Software Group (MIRSG) is a sub-group of the ARC Co
 - All development and operational work is planned and tracked on GitHub.
 - The [MIRSG GitHub Project Board](https://github.com/orgs/UCL-MIRSG/projects/3) provides views across all our activities.
 - A more in depth diagram of how various repositories and issue types fit together can be found in [structure.md](structure.md).
+- [Work-items and issue types](./work-items.md), as well as [example issue workflows](./issue-workflows.md) are documented in this repository.
 
 ### Recording XNAT and OMERO Projects
 
-- Every study/project managed on a MIRSG run XNAT or OMERO instance should have a project record tracked as a [**[PROJREC]** issue in this repository](https://github.com/UCL-MIRSG/MIRSG/issues/new?assignees=&labels=project-record&template=mirsg-project.md&title=%5BPROJREC%5D%3A+%3Ctitle%3E)
+- Every study/project managed on a MIRSG run XNAT or OMERO instance should have a project record tracked as a [**[RECORD]** issue in this repository](https://github.com/UCL-MIRSG/MIRSG/issues/new?assignees=&labels=project-record&template=mirsg-project.md&title=%5BRECORD%5D%3A+%3Ctitle%3E)
 - Each MIRSG Project Record may be linked to 0 or more related [issues on the ARC Opportunities Tracker](https://github.com/UCL-ARC/research-software-opportunities/issues).
   - Discussions related to funding should take place in the opportunities tracker repository so that it can be easily managed as part of the wider ARC Collaborations portfolio.
 
