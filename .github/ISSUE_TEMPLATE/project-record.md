@@ -11,10 +11,8 @@ assignees: ""
 
 ### Funding Details
 
-```[tasklist]
 ### Connected ARC Opportunities
-- [ ] https://github.com/UCL-ARC/research-software-opportunities/issues/xxx
-```
+- https://github.com/UCL-ARC/research-software-opportunities/issues/xxx
 
 ### Project Documentation and Details
 <!-- Additional information relevant to the project - linking out where needed-->
@@ -28,7 +26,7 @@ assignees: ""
 <!-- Update with relevant issues that come up whilst the project is being managed  -->
 
 ```[tasklist]
-### Related Requests
+### Related Work Items
 - [ ] https://github.com/UCL-MIRSG/MIRSG/issues/xxx
 - [ ] Set-up <title>
 ```
