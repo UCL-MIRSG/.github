@@ -7,6 +7,7 @@ This helps with planning and tracking information across all of our activities, 
 
 ### Product & Development Focussed
 
+- 🐳 **Epic** - A business initiative to be accomplished - usually through a set of related features and stories - *e.g. [EPIC] Enable compute integration with XNAT*
 - 💼 **Record** - Captures a "project" that either translates directly to an XNAT project or is a software development project - *e.g. [RECORD] XNAT support for the MRI-x project*
 - ✨ **Feature** - A discrete and defined piece of functionality that fulfills user needs - *e.g. [FEATURE] Add support for XNAT Container Service via Kubernetes*
 - 📝 **Story** -  A need or use case expressed from a user's perspective as “persona + need + purpose.”- *e.g. [STORY] As a researcher, I want to be able to run my analysis from XNAT, so that I don't need to move my data*
@@ -26,6 +27,10 @@ The below diagram shows some possible relationships between issue types. Not all
 ```mermaid
 classDiagram
   direction LR
+
+    class EPIC {
+
+    }
 
     class RECORD {
 
@@ -59,7 +64,11 @@ classDiagram
         
     }
 
+    
     RECORD --> REQUEST: raises related 
+
+    FEATURE --> EPIC: rolls up into
+    STORY --> EPIC: rolls up into
 
     FEATURE --> STORY: broken down into
     FEATURE --> TASK: implemented through multiple
@@ -82,7 +91,6 @@ Worked examples of how issues relate together in common workflows to track, brea
 
 ## Proposed but not Implemented Issue Types
 
-- 🐳 **Epic** - A business initiative to be accomplished - usually through a set of related features - *e.g. [EPIC] Enable compute integration with XNAT*
 - 👥 **Discussion** - A suggestion, idea, or request for comment to get documented consensus on a topic before committing to non-trivial work - *e.g. [DISCUSSION] How should we support compute?*
 
 ## Useful links

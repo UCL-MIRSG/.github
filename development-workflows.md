@@ -8,6 +8,36 @@ Development related items may arise from [operational workflows](./operational-w
 
 ## Examples
 
+### Epic Workflow
+
+Groups of related [FEATURE] and [STORY] issues may roll up into an [EPIC] that represents a larger initiative to be accomplished. Alternatively an identified [EPIC] may need to be broken down into [FEATURE] and [STORY] issues.
+
+```mermaid
+    flowchart LR
+
+    initiative([New business \n initiative identified])
+    epic_breakdown["Breakdown into \n [FEATURE] issues and/or \n identify related [STORY]s"]
+    epic_item_workflow[["Complete [FEATURE] & [STORY] items,\n updating progress \n against[EPIC]"]]
+    is_epic_complete{"EPIC acceptance \n criteria met?"}
+    update_epic["Update [EPIC]"]
+    close_epic["Close [EPIC]"]
+
+    done([Done])
+
+    initiative --> epic_issue 
+
+    subgraph Epic Development Workflow
+        epic_issue --> epic_breakdown --> epic_item_workflow --> update_epic --> is_epic_complete
+        is_epic_complete --Yes--> close_epic
+        is_epic_complete --No--> epic_breakdown
+    end
+
+    close_epic --> done
+
+    epic_issue[["Create [EPIC] issue"]]
+
+```
+
 ### Story Workflow
 
 User needs can be recorded through the creation of a [STORY] issue. If selected for development, they can be broken down into [TASK] items that implement the needed functionality, or if part of a set of related user needs, rolled up into a [FEATURE].
@@ -38,7 +68,7 @@ User needs can be recorded through the creation of a [STORY] issue. If selected 
 
 ### Feature Workflow
 
-Larger pieces of development, defined directly by the MIRSG team, or through the aggregation of user needs can be recorded as a [FEATURE] issue. If selected for development, they can be refined and broken down into [STORY] and [TASK] issues to track their implementation. 
+Larger pieces of development, defined directly by the MIRSG team, or through the aggregation of user needs can be recorded as a [FEATURE] issue. If selected for development, they can be refined and broken down into [STORY] and [TASK] issues to track their implementation.
 
 ```mermaid
     flowchart LR
