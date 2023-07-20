@@ -15,8 +15,6 @@ assignees: ""
 ### Acceptance Criteria
 <!-- Criteria to meet so the issue can be closed. -->
 
-### Related Work Items
-
 ```[tasklist]
-- [ ] 
+### Related Work Items
 ```

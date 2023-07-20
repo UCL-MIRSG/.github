@@ -10,8 +10,6 @@ assignees: ""
 <!-- Provide enough detail to create shared understanding of scope. Any developer
 should be able to take the item and know what needs to be implemented.-->
 
-### Related Work Items
-
 ```[tasklist]
-- [ ] 
+### Related Work Items
 ```

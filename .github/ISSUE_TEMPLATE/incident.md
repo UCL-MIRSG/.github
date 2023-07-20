@@ -18,8 +18,6 @@ assignees: ""
 ### Mitigation
 <!-- What can be done in the future to prevent reoccurrence or reduce severity? -->
 
-### Related Work Items
-
 ```[tasklist]
-- [ ] 
+### Related Work Items
 ```

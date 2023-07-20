@@ -19,5 +19,4 @@ can write tasks and test cases to implement the item. -->
 
 ```[tasklist]
 ### Related Tasks
-- [ ] 
 ```
