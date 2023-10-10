@@ -3,19 +3,22 @@
   "extends": [
     "config:base",
     "schedule:weekdays",
-    ":automergeBranch",
-    ":automergeDigest",
-    ":automergeMinor",
-    ":automergePatch",
     ":disableDependencyDashboard",
     ":enablePreCommit"
   ],
   "commitMessageAction": "Renovate:",
   "packageRules": [
     {
+      "description": "Automatically merge minor and patch-level updates",
+      "automerge": true,
+      "automergeType": "branch",
+      "matchUpdateTypes": ["digest", "minor", "patch"],
+      "matchManagers": ["github-actions", "pre-commit"]
+    },
+    {
       "description": "Shorten commit titles",
       "commitMessageTopic": "{{depName}}",
-      "matchManagers": ["bundler", "github-actions", "pre-commit"]
+      "matchManagers": ["github-actions", "pre-commit"]
     }
   ]
 }
