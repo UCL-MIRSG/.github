@@ -7,16 +7,20 @@ assignees: ""
 ---
 
 ### Incident Description
+
 <!-- What is the incident and what is the impact? -->
 
 ### Resolution
+
 <!-- Summary of how the incident was fixed/worked around -->
 
 ### Root Cause
+
 <!-- Why did this incident occur? -->
 
 ### Mitigation
-<!-- What can be done in the future to prevent reoccurrence or reduce severity? -->
+
+<!-- What can be done in the future to prevent recurrence or reduce severity? -->
 
 ```[tasklist]
 ### Related Work Items

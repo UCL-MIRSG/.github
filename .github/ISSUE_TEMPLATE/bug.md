@@ -7,12 +7,15 @@ assignees: ""
 ---
 
 ### Bug Description
+
 <!-- What is the nature of the bug and what is the impact? -->
 
 ### Steps to Reproduce
+
 <!-- How can the bug be replicated? -->
 
 ### Acceptance Criteria
+
 <!-- Criteria to meet so the issue can be closed. -->
 
 ```[tasklist]
