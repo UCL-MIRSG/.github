@@ -21,3 +21,11 @@ repos:
     rev: v2.2.6
     hooks:
       - id: codespell
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.0.292
+    hooks:
+      - id: ruff
+  - repo: https://github.com/psf/black
+    rev: 23.9.1
+    hooks:
+      - id: black
