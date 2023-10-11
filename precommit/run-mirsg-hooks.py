@@ -6,12 +6,10 @@ import sys
 HERE = pathlib.Path(__file__).resolve()
 
 
-def main(run_once: int = 0) -> None:
-    if not run_once:
-        cfg = HERE.parent / ".pre-commit-config.yaml"
-        cmd = ["pre-commit", "run", "--config", f"{cfg}", "--files"] + sys.argv[1:]
-        subprocess.run(cmd)
-        run_once += 1
+def main() -> None:
+    cfg = HERE.parent / ".pre-commit-config.yaml"
+    cmd = ["pre-commit", "run", "--config", f"{cfg}", "--files"] + sys.argv[1:]
+    subprocess.run(cmd)
 
 
 if __name__ == "__main__":
