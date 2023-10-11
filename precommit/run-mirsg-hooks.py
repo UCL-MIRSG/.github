@@ -7,7 +7,7 @@ HERE = pathlib.Path(__file__).resolve()
 
 
 def main() -> None:
-    cfg = HERE.parent / "mirsg-hooks.yaml"
+    cfg = HERE.parent / ".pre-commit-config.yaml"
     cmd = ["pre-commit", "run", "--config", f"{cfg}", "--files"] + sys.argv[1:]
     subprocess.run(cmd)
 
