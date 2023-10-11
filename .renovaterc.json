@@ -16,5 +16,8 @@
       "commitMessageTopic": "{{depName}}",
       "matchManagers": ["github-actions", "pre-commit"]
     }
-  ]
+  ],
+  "pre-commit": {
+    "fileMatch": ["precommit/mirsg-hooks.yaml"]
+  }
 }
