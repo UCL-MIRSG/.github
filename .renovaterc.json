@@ -18,7 +18,6 @@
     }
   ],
   "pre-commit": {
-    "description": "Different config and follow commit hash",
     "fileMatch": ["precommit/mirsg-hooks.yaml"]
   }
 }
