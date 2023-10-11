@@ -23,9 +23,9 @@
     },
     {
       "description": "Update pre-commit hash for MIRSG hooks",
+      "matchDatasources": ["git-refs"],
       "matchDepNames": ["UCL-MIRSG/.github"],
-      "matchManagers": ["pre-commit"],
-      "versioning": "git"
+      "matchManagers": ["pre-commit"]
     }
   ]
 }
