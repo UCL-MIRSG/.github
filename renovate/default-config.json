@@ -14,7 +14,7 @@
       "automerge": true,
       "automergeType": "branch",
       "matchUpdateTypes": ["digest", "minor", "patch"],
-      "matchManagers": ["github-actions", "pre-commit"]
+      "matchManagers": ["github-actions"]
     },
     {
       "description": "Shorten commit titles",
@@ -23,9 +23,11 @@
     },
     {
       "description": "Update pre-commit hash for MIRSG hooks",
-      "matchDatasources": ["git-refs"],
+      "automerge": true,
+      "automergeType": "branch",
       "matchDepNames": ["UCL-MIRSG/.github"],
-      "matchManagers": ["pre-commit"]
+      "matchManagers": ["pre-commit"],
+      "matchUpdateTypes": ["digest"]
     }
   ]
 }
