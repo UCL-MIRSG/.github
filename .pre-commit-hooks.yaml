@@ -1,0 +1,6 @@
+- id: mirsg-hooks
+  name: MIRSG hooks
+  description: Default pre-commit hooks for MIRSG repos
+  language: script
+  entry: ./precommit/run-mirsg-hooks.py
+  verbose: true
