@@ -1,15 +1,17 @@
 #!/usr/bin/env python
-import os
+import pathlib
+import subprocess
 import sys
 
-HERE = os.path.dirname(os.path.realpath(__file__))
+HERE = pathlib.Path(__file__).resolve()
 
 
-def main():
-    cfg = os.path.join(HERE, "mirsg-hooks.yaml")
-    cmd = ["pre-commit", "run", "--config", cfg, "--files"] + sys.argv[1:]
-    os.execvp(cmd[0], cmd)
+def main() -> None:
+    print(HERE.parent)
+    cfg = HERE.parent / ".pre-commit-config.yaml"
+    cmd = ["pre-commit", "run", "--config", f"{cfg}", "--files"] + sys.argv[1:]
+    subprocess.run(cmd)
 
 
 if __name__ == "__main__":
-    exit(main())
+    main()
