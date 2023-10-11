@@ -20,6 +20,12 @@
       "description": "Shorten commit titles",
       "commitMessageTopic": "{{depName}}",
       "matchManagers": ["github-actions", "pre-commit"]
+    },
+    {
+      "description": "Update pre-commit hash for MIRSG hooks",
+      "matchDepNames": ["UCL-MIRSG/.github"],
+      "matchManagers": ["pre-commit"],
+      "pinDigests": true
     }
   ]
 }

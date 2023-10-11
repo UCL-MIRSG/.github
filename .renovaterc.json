@@ -10,6 +10,9 @@
   ],
   "commitMessageAction": "Renovate:",
   "reviewers": ["team:mirsg-rses"],
+  "pre-commit": {
+    "fileMatch": ["precommit/mirsg-hooks.yaml"]
+  },
   "packageRules": [
     {
       "description": "Shorten commit titles",
