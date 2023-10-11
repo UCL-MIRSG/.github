@@ -9,6 +9,7 @@
     ":enablePreCommit"
   ],
   "commitMessageAction": "Renovate:",
+  "reviewers": ["team:mirsg-rses"],
   "packageRules": [
     {
       "description": "Shorten commit titles",
