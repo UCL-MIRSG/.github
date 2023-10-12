@@ -2,12 +2,11 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:base",
-    "schedule:weekdays",
+    "schedule:monthly",
     ":disableDependencyDashboard",
     ":enablePreCommit"
   ],
   "commitMessageAction": "Renovate:",
-  "prHourlyLimit": 0,
   "reviewers": ["team:mirsg-rses"],
   "customManagers": [
     {
