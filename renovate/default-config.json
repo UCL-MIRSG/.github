@@ -14,7 +14,7 @@
       "description": "Update pre-commit via hash for MIRSG hooks",
       "currentValueTemplate": "main",
       "datasourceTemplate": "git-refs",
-      "depNameTemplate": "MIRSG hooks",
+      "depNameTemplate": "mirsg-hooks",
       "fileMatch": ["(^|/)\\.pre-commit-config\\.ya?ml$"],
       "matchStrings": [
         "https://github.com/UCL-MIRSG/\\.github\\s*rev:\\s['\"]?(?<currentDigest>.*?)['\"]?\\s*hooks:"
@@ -27,8 +27,8 @@
       "description": "Automatically merge minor and patch-level updates",
       "automerge": true,
       "automergeType": "branch",
-      "matchDepNames": ["MIRSG hooks"],
       "matchManagers": ["github-actions", "pre-commit"],
+      "matchSourceUrls": ["https://github.com/UCL-MIRSG/.github"],
       "matchUpdateTypes": ["digest", "minor", "patch"]
     },
     {
