@@ -17,10 +17,8 @@
       "depNameTemplate": ".github",
       "fileMatch": ["(^|/)\\.pre-commit-config\\.ya?ml$"],
       "matchStrings": [
-        "repo:\\s*https://github.com/UCL-MIRSG/\\.github",
-        "rev:\\s*\"(?<currentDigest>.*?)\""
+        "https://github.com/UCL-MIRSG/\\.github\\s*rev:\\s['\"]?(?<currentDigest>.*?)['\"]?\\s*hooks:"
       ],
-      "matchStringsStrategy": "combination",
       "packageNameTemplate": "https://github.com/UCL-MIRSG/.github"
     }
   ],
