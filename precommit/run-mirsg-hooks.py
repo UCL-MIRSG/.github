@@ -6,11 +6,12 @@ import sys
 HERE = pathlib.Path(__file__).resolve()
 
 
-def main() -> None:
+def main() -> int:
     cfg = HERE.parent / "mirsg-hooks.yaml"
     cmd = ["pre-commit", "run", "--config", f"{cfg}", "--files"] + sys.argv[1:]
-    subprocess.run(cmd)
+    result = subprocess.run(cmd)
+    return result.returncode
 
 
 if __name__ == "__main__":
-    main()
+    exit(main())
