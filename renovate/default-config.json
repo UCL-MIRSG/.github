@@ -25,12 +25,6 @@
   ],
   "packageRules": [
     {
-      "description": "Automatically merge mirsg-hook updates",
-      "automerge": true,
-      "automergeType": "branch",
-      "matchDepNames": "mirsg-hooks"
-    },
-    {
       "description": "Automatically merge minor and patch-level updates",
       "automerge": true,
       "automergeType": "branch",
