@@ -10,14 +10,19 @@
   ],
   "commitMessageAction": "Renovate:",
   "reviewers": ["team:mirsg-rses"],
-  "pre-commit": {
-    "fileMatch": ["precommit/mirsg-hooks.yaml"]
-  },
   "packageRules": [
     {
       "description": "Shorten commit titles",
       "commitMessageTopic": "{{depName}}",
       "matchManagers": ["github-actions", "pre-commit"]
+    },
+    {
+      "description": "Non-standard pre-commit file",
+      "packages": {
+        "precommit/mirsg-hooks.yaml": {
+          "manager": "pre-commit"
+        }
+      }
     }
   ]
 }
