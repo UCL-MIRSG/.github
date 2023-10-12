@@ -7,7 +7,7 @@
     ":enablePreCommit"
   ],
   "commitMessageAction": "Renovate:",
-  "reviewers": ["team:mirsg-rses"],
+  "reviewers": ["team:mirsg"],
   "customManagers": [
     {
       "customType": "regex",
