@@ -28,13 +28,18 @@
       "automerge": true,
       "automergeType": "branch",
       "matchManagers": ["github-actions", "pre-commit"],
-      "matchSourceUrls": ["https://github.com/UCL-MIRSG/.github"],
       "matchUpdateTypes": ["digest", "minor", "patch"]
     },
     {
       "description": "Shorten commit titles",
       "commitMessageTopic": "{{depName}}",
       "matchManagers": ["github-actions", "pre-commit"]
+    },
+    {
+      "description": "Disable mirsg-hooks from pre-commit manager",
+      "enabled": false,
+      "matchManagers": ["pre-commit"],
+      "matchSourceUrls": ["https://github.com/UCL-MIRSG/.github"]
     }
   ]
 }
