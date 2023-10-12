@@ -25,6 +25,12 @@
   ],
   "packageRules": [
     {
+        "description": "Automatically merge mirsg-hook updates",
+        "automerge": true,
+        "automergeType": "branch",
+        "matchDepNames": "mirsg-hooks"
+    },
+    {
       "description": "Automatically merge minor and patch-level updates",
       "automerge": true,
       "automergeType": "branch",
@@ -35,12 +41,6 @@
       "description": "Shorten commit titles",
       "commitMessageTopic": "{{depName}}",
       "matchManagers": ["github-actions", "pre-commit"]
-    },
-    {
-      "description": "Disable mirsg-hooks from pre-commit manager",
-      "enabled": false,
-      "matchDepNames": ["UCL-MIRSG/.github"],
-      "matchManagers": ["pre-commit"]
     }
   ]
 }
