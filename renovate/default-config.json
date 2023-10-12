@@ -28,13 +28,13 @@
       "automerge": true,
       "automergeType": "branch",
       "matchManagers": ["github-actions", "pre-commit"],
+      "matchSourceUrls": ["https://github.com/UCL-MIRSG/.github"],
       "matchUpdateTypes": ["digest", "minor", "patch"]
     },
     {
       "description": "Shorten commit titles",
       "commitMessageTopic": "{{depName}}",
-      "matchManagers": ["github-actions", "pre-commit"],
-      "matchSourceUrls": ["https://github.com/UCL-MIRSG/.github"]
+      "matchManagers": ["github-actions", "pre-commit"]
     }
   ]
 }
