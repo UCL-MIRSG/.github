@@ -8,26 +8,32 @@
   ],
   "commitMessageAction": "Renovate:",
   "reviewers": ["team:mirsg-rses"],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "description": "Update pre-commit via hash for MIRSG hooks",
+      "currentValueTemplate": "main",
+      "datasourceTemplate": "git-refs",
+      "depNameTemplate": ".github",
+      "fileMatch": ["(^|/)\\.pre-commit-config\\.ya?ml$"],
+      "matchStrings": [
+        "https://github.com/UCL-MIRSG/\\.github\\s*rev:\\s['\"]?(?<currentDigest>.*?)['\"]?\\s*hooks:"
+      ],
+      "packageNameTemplate": "https://github.com/UCL-MIRSG/.github"
+    }
+  ],
   "packageRules": [
     {
       "description": "Automatically merge minor and patch-level updates",
       "automerge": true,
       "automergeType": "branch",
       "matchUpdateTypes": ["digest", "minor", "patch"],
-      "matchManagers": ["github-actions"]
+      "matchManagers": ["github-actions", "pre-commit"]
     },
     {
       "description": "Shorten commit titles",
       "commitMessageTopic": "{{depName}}",
       "matchManagers": ["github-actions", "pre-commit"]
-    },
-    {
-      "description": "Update pre-commit hash for MIRSG hooks",
-      "automerge": true,
-      "automergeType": "branch",
-      "matchDepNames": ["UCL-MIRSG/.github"],
-      "matchManagers": ["pre-commit"],
-      "matchUpdateTypes": ["digest"]
     }
   ]
 }
