@@ -9,7 +9,7 @@
     ":enablePreCommit"
   ],
   "commitMessageAction": "Renovate:",
-  "reviewers": ["team:mirsg-rses"],
+  "reviewers": ["team:mirsg"],
   "pre-commit": {
     "fileMatch": ["precommit/mirsg-hooks.yaml"]
   },
