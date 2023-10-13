@@ -8,20 +8,6 @@
   ],
   "commitMessageAction": "Renovate:",
   "reviewers": ["team:mirsg"],
-  "customManagers": [
-    {
-      "customType": "regex",
-      "description": "Update pre-commit via hash for MIRSG hooks",
-      "currentValueTemplate": "main",
-      "datasourceTemplate": "git-refs",
-      "depNameTemplate": "mirsg-hooks",
-      "fileMatch": ["(^|/)\\.pre-commit-config\\.ya?ml$"],
-      "matchStrings": [
-        "https://github.com/UCL-MIRSG/\\.github\\s*rev:\\s['\"]?(?<currentDigest>.*?)['\"]?\\s*hooks:"
-      ],
-      "packageNameTemplate": "https://github.com/UCL-MIRSG/.github"
-    }
-  ],
   "packageRules": [
     {
       "description": "Automatically merge minor and patch-level updates",
