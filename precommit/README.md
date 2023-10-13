@@ -6,7 +6,7 @@ a file called `.pre-commit-config.yaml` with the following code.
 ```yaml
 repos:
   - repo: https://github.com/UCL-MIRSG/.github
-    rev: ""
+    rev: v0.0.0
     hooks:
       - id: mirsg-hooks
 ```
