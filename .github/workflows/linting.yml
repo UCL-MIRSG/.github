@@ -11,6 +11,10 @@ jobs:
   linting:
     runs-on: ubuntu-latest
     steps:
-      - uses: ./actions/linting
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Run pre-commit over the repo
+        uses: ./actions/linting
         with:
           pre-commit-config: ./.pre-commit-config.yaml
