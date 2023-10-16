@@ -36,12 +36,12 @@ runs:
       run: echo ${{ inputs.ansible-roles-config }}
 
     - shell: bash
-      run: echo ${{ inputs.ansible-roles-config != "missing" }}
+      run: echo ${{ inputs.ansible-roles-config != 'missing' }}
 
     - name: Install ansible
       shell: bash
       run: python -m pip install ansible
-      if: ${{ inputs.ansible-roles-config != "missing" }}
+      if: ${{ inputs.ansible-roles-config != 'missing' }}
 
     - name: Install pre-commit
       shell: bash
