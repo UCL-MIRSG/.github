@@ -1,9 +1,10 @@
-name: Add Issue to project
+name: Add Issues to Project
+
 on:
   workflow_call:
 
 jobs:
-  add_issue:
+  add-issue:
     runs-on: ubuntu-latest
     steps:
       - name: Generate token
