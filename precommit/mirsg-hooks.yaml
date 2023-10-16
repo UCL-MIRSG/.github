@@ -33,10 +33,6 @@ repos:
     rev: v6.20.3
     hooks:
       - id: ansible-lint
-  - repo: https://github.com/renovatebot/pre-commit-hooks
-    rev: 37.22.0
-    hooks:
-      - id: renovate-config-validator
   - repo: https://github.com/codespell-project/codespell
     rev: v2.2.6
     hooks:
