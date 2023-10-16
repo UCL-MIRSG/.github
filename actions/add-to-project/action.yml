@@ -3,15 +3,15 @@ description: Add issues to the GitHub project board
 
 inputs:
   app_id:
-    description: "Application ID"
+    description: Application ID
     required: true
 
   app_pem:
-    description: "Application private key"
+    description: Application private key
     required: true
 
 runs:
-  using: "composite"
+  using: composite
   steps:
     - name: Generate token
       id: generate-token
