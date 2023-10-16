@@ -16,24 +16,18 @@ runs:
     - name: Checkout source
       uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4
 
-    - name: Cache ansible & pre-commit
+    - name: Cache ansible/pre-commit
       uses: actions/cache@v3
       with:
         path: |-
-          ~/.ansible
+          ${{ if (inputs.ansible-roles-config != 'missing') }}~/.ansible{{ endif }}
           ~/.cache/pre-commit
         key: >-
           cache-
+          ${{ if (inputs.ansible-roles-config != 'missing') }}
           ${{ hashFiles(inputs.ansible-roles-config) }}-
+          {{ endif }}
           ${{ hashFiles(inputs.pre-commit-config) }}
-      if: ${{ inputs.ansible-roles-config != 'missing' }}
-
-    - name: Cache pre-commit
-      uses: actions/cache@v3
-      with:
-        path: ~/.cache/pre-commit
-        key: cache-${{ hashFiles(inputs.pre-commit-config) }}
-      if: ${{ inputs.ansible-roles-config == 'missing' }}
 
     - name: Set up python
       uses: actions/setup-python@v4
