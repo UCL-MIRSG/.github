@@ -2,11 +2,11 @@ name: Add Issues to Project
 description: Add issues to the GitHub project board
 
 inputs:
-  APP_ID:
+  app_id:
     description: 'Application ID'
     required: true
 
-  APP_PEM:
+  app_pem:
     description: 'Application private key'
     required: true
 
@@ -17,8 +17,8 @@ runs:
       id: generate-token
       uses: tibdex/github-app-token@v1.7.0
       with:
-        app_id: ${{ inputs.APP_ID }}
-        private_key: ${{ inputs.APP_PEM }}
+        app_id: ${{ inputs.app_id }}
+        private_key: ${{ inputs.app_pem }}
 
     - name: Get project data
       uses: actions/add-to-project@v0.4.0

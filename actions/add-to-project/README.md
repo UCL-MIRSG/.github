@@ -9,4 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: UCL-MIRSG/.github/actions/add-to-project@v0.1.0
+        with:
+          app_id: ${{ secrets.APP_ID }}
+          app_pem: ${{ secrets.APP_PEM }}
 ```
