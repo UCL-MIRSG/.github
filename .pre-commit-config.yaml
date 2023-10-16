@@ -29,3 +29,7 @@ repos:
     rev: 23.9.1
     hooks:
       - id: black
+  - repo: https://github.com/sirosen/check-jsonschema
+    rev: 0.27.0
+    hooks:
+      - id: check-github-workflows
