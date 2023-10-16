@@ -4,7 +4,7 @@ description: Runs pre-commit over the repo
 inputs:
   ansible-roles-config:
     description: The ansible requirements.yml file
-    default: missing
+    default: "missing"
 
   pre-commit-config:
     description: The pre-commit config file of the current repo
