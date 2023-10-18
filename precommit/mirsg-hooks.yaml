@@ -33,6 +33,9 @@ repos:
     rev: v6.20.3
     hooks:
       - id: ansible-lint
+        args:
+          - --exclude=.github
+          - --warn-list=yaml[indentation]
   - repo: https://github.com/codespell-project/codespell
     rev: v2.2.6
     hooks:
