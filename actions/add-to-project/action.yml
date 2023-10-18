@@ -15,10 +15,10 @@ runs:
   steps:
     - name: Generate token
       id: generate-token
-      uses: tibdex/github-app-token@v2.1.0
+      uses: actions/create-github-app-token@v1
       with:
-        app_id: ${{ inputs.app_id }}
-        private_key: ${{ inputs.app_pem }}
+        app-id: ${{ inputs.app_id }}
+        private-key: ${{ inputs.app_pem }}
 
     - name: Get project data
       uses: actions/add-to-project@v0.5.0
