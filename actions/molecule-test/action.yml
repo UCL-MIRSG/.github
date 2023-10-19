@@ -1,0 +1,26 @@
+---
+name: Molecule Test
+description: Run `molecule test` on an Ansible role
+
+inputs:
+  scenario:
+    description: Name of the scenario to run the tests on
+    required: false
+    default: default
+
+runs:
+  using: composite
+  steps:
+    - name: Check out the codebase
+      uses: actions/checkout@v4
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.11
+    - name: Install test dependencies
+      run: |
+        sudo apt-get update && sudo apt-get -y install rsync
+        python3 -m pip install --upgrade pip
+        python3 -m pip install ansible molecule molecule-plugins[docker] docker requests
+    - name: Test with molecule
+      run: molecule test --scenario-name ${{ inputs.scenario }}
