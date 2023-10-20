@@ -8,11 +8,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run `molecule test`
-        uses: UCL-MIRSG/.github/actions/molecule-test@v.0.1.0
+        uses: UCL-MIRSG/.github/actions/molecule-test@vx.y.z
 ```
 
-This will run the `default` scenario for your role. If you would like to specify a different
-scenario, you can specify this with the `scenario` input:
+where `x.y.z` is the `major.minor.patch` version of the action you would like to use.
+
+The above workflow will run the `default` scenario for your role. If you would like to
+specify a different scenario, you can do so with the `scenario` input:
 
 ```yaml
 jobs:
@@ -26,7 +28,7 @@ jobs:
           - rocky8
     steps:
       - name: Run `molecule test`
-        uses: UCL-MIRSG/.github/actions/molecule-test@v0.21.0
+        uses: UCL-MIRSG/.github/actions/molecule-test@vx.y.z
         with:
           scenario: ${{ matrix.molecule_scenario }}
 ```
