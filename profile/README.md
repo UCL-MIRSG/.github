@@ -27,4 +27,4 @@ Computing, Centre for Medical Imaging, MRC LHA.
 
 To enquire about medical imaging-related software development services or about
 making use of our XNAT provision,
-[email the Research Software Development Group](mailto:rc-softdev@ucl.ac.uk?subject=Medical Imaging).
+[email the Research Software Development Group](mailto:rc-softdev@ucl.ac.uk?subject=Medical%20Imaging).
