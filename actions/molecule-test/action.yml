@@ -18,9 +18,11 @@ runs:
       with:
         python-version: 3.11
     - name: Install test dependencies
+      shell: bash
       run: |
         sudo apt-get update && sudo apt-get -y install rsync
         python3 -m pip install --upgrade pip
         python3 -m pip install ansible molecule molecule-plugins[docker] docker requests
     - name: Test with molecule
+      shell: bash
       run: molecule test --scenario-name  "${{ inputs.scenario }}"
