@@ -11,7 +11,9 @@ def main() -> int:
     cfg = HERE.parent / "mirsg-hooks.yaml"
     result = subprocess.run(
         shlex.split(f"pre-commit run --config {cfg} --files {sys.argv[1:]}"),
+        capture_output=True,
         check=True,
+        text=True,
     )
     return result.returncode
 
