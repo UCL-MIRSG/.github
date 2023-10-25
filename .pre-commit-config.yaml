@@ -25,10 +25,7 @@ repos:
     rev: v0.1.0
     hooks:
       - id: ruff
-  - repo: https://github.com/psf/black
-    rev: 23.10.0
-    hooks:
-      - id: black
+      - id: ruff-format
   - repo: https://github.com/sirosen/check-jsonschema
     rev: 0.27.0
     hooks:
