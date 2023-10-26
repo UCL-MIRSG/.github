@@ -2,7 +2,6 @@
 import pathlib
 import subprocess
 import sys
-import shlex
 
 HERE = pathlib.Path(__file__).resolve()
 
@@ -10,7 +9,14 @@ HERE = pathlib.Path(__file__).resolve()
 def main() -> int:
     cfg = HERE.parent / "mirsg-hooks.yaml"
     result = subprocess.run(
-        shlex.split(f"pre-commit run --config {cfg} --files {sys.argv[1:]}"),
+        [
+            "pre-commit",
+            "run",
+            "--config",
+            f"{cfg}",
+            "--files",
+        ]
+        + sys.argv[1:],
         check=False,
     )
     return result.returncode
