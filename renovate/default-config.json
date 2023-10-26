@@ -4,11 +4,11 @@
     "config:base",
     "schedule:monthly",
     ":disableDependencyDashboard",
-    ":enablePreCommit"
+    ":enablePreCommit",
+    ":noUnscheduledUpdates"
   ],
   "commitMessageAction": "Renovate:",
   "reviewers": ["team:mirsg"],
-  "schedule": ["* * 17 * *"],
   "packageRules": [
     {
       "description": "Automatically merge minor and patch-level updates",
