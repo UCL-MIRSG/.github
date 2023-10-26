@@ -23,7 +23,7 @@
     },
     {
       "description": "Only run the day after we receive more GitHub Actions minutes",
-      "schedule": ["on the seventeenth day of each month"]
+      "schedule": ["on the seventeenth day of the month"]
     }
   ]
 }
