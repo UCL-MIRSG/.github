@@ -4,7 +4,8 @@
     "config:base",
     "schedule:monthly",
     ":disableDependencyDashboard",
-    ":enablePreCommit"
+    ":enablePreCommit",
+    ":noUnscheduledUpdates"
   ],
   "commitMessageAction": "Renovate:",
   "reviewers": ["team:mirsg"],
