@@ -8,6 +8,7 @@
   ],
   "commitMessageAction": "Renovate:",
   "reviewers": ["team:mirsg"],
+  "schedule": ["* * 17 * *"],
   "packageRules": [
     {
       "description": "Automatically merge minor and patch-level updates",
@@ -20,11 +21,6 @@
       "description": "Shorten commit titles",
       "commitMessageTopic": "{{depName}}",
       "matchManagers": ["github-actions", "pre-commit"]
-    },
-    {
-      "description": "Only run the day after we receive more GitHub Actions minutes",
-      "schedule": ["* * 17 * *"],
-      "matchPackagePatterns": ["*"]
     }
   ]
 }
