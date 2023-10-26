@@ -20,6 +20,10 @@
       "description": "Shorten commit titles",
       "commitMessageTopic": "{{depName}}",
       "matchManagers": ["github-actions", "pre-commit"]
+    },
+    {
+      "description": "Only run the day after we receive more GitHub Actions minutes",
+      "schedule": ["on the seventeenth day of each month"]
     }
   ]
 }
