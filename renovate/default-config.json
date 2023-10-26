@@ -23,7 +23,8 @@
     },
     {
       "description": "Only run the day after we receive more GitHub Actions minutes",
-      "schedule": ["* * 17 * *"]
+      "schedule": ["* * 17 * *"],
+      "matchPackagePatterns": ["*"]
     }
   ]
 }
