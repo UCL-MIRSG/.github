@@ -7,6 +7,10 @@ inputs:
     description: Name of the scenario to run the tests on
     required: false
     default: default
+  external_requirements:
+    description: File containing requirements that are not installed by the role or collection
+    required: false
+    type: string
 
 runs:
   using: composite
@@ -23,6 +27,11 @@ runs:
         sudo apt-get update && sudo apt-get -y install rsync
         python3 -m pip install --upgrade pip
         python3 -m pip install ansible molecule molecule-plugins[docker] docker requests
+    - name: Install additional ansible requirements
+      if: github.event.inputs.external_requirements != ''
+      shell: bash
+      run: |
+        ansible-galaxy install -r "${{ inputs.external_requirements }}"
     - name: Test with molecule
       shell: bash
       run: molecule test --scenario-name  "${{ inputs.scenario }}"
