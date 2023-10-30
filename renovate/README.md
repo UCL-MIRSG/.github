@@ -56,8 +56,9 @@ Alternatively, if using rulesets you can modify and import the following two
 rulesets.
 
 The first one enables the `Restrict deletions`, `Block force pushes` settings,
-as well as requiring a series of named status checks to pass. No one is able to
-bypass these rules. Make sure to add all status checks that you require.
+as well as requiring a series of named status checks to pass.
+No one is able to bypass these rules.
+Make sure to add all status checks that you require.
 
 ```json
 {
@@ -98,7 +99,7 @@ bypass these rules. Make sure to add all status checks that you require.
 
 The second one requires pull requests with at least `1` reviewer, but the
 `actor_id` (which refers to `renovate`) is able to skip this for when automerge
-is enabled for the relevant dependency.
+(on branch) is enabled for the relevant dependency.
 
 ```json
 {
