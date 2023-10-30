@@ -13,7 +13,7 @@ Note, the two `/` is intentional.
 }
 ```
 
-One can then view the logs here https://developer.mend.io.
+One can then view the logs here <https://developer.mend.io/>.
 
 ## Automerging
 
@@ -52,7 +52,7 @@ following.
 
 ### Rulesets
 
-Alternatively, if using rulesets you can mofudy and import the following two
+Alternatively, if using rulesets you can modify and import the following two
 rulesets.
 
 The first one enables the `Restrict deletions`, `Block force pushes` settings,
