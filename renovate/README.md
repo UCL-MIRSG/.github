@@ -57,22 +57,19 @@ rulesets.
 
 The first one enables the `Restrict deletions`, `Block force pushes` settings,
 as well as requiring a series of named status checks to pass. No one is able to
-bypass these rules.
+bypass these rules. Make sure to add all status checks that you require.
 
 ```json
 {
-  "id": <id>,
+  "id": 1,
   "name": "Status Checks",
   "target": "branch",
   "source_type": "Repository",
-  "source": "UCL-MIRSG/<repo-name>",
   "enforcement": "active",
   "conditions": {
     "ref_name": {
       "exclude": [],
-      "include": [
-        "~DEFAULT_BRANCH"
-      ]
+      "include": ["~DEFAULT_BRANCH"]
     }
   },
   "rules": [
@@ -105,18 +102,15 @@ is enabled for the relevant dependency.
 
 ```json
 {
-  "id": <id>,
+  "id": 2,
   "name": "Pull Requests",
   "target": "branch",
   "source_type": "Repository",
-  "source": "UCL-MIRSG/<repo-name>",
   "enforcement": "active",
   "conditions": {
     "ref_name": {
       "exclude": [],
-      "include": [
-        "~DEFAULT_BRANCH"
-      ]
+      "include": ["~DEFAULT_BRANCH"]
     }
   },
   "rules": [
