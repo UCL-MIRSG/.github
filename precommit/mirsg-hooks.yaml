@@ -34,8 +34,9 @@ repos:
     hooks:
       - id: ansible-lint
         args:
-          - --exclude .github docker-compose.yml
-          - --warn-list yaml[indentation]
+          - --exclude=.github
+          - --exclude=docker-compose.yml
+          - --warn-list=yaml[indentation]
   - repo: https://github.com/codespell-project/codespell
     rev: v2.2.6
     hooks:
