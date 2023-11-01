@@ -11,6 +11,8 @@ jobs:
         with:
           app-id: ${{ secrets.APP_ID }}
           app-pem: ${{ secrets.APP_PEM }}
+          project-id: project_board_url # optional: defaults to the project board url
 ```
 
 where `x.y.z` is the `major.minor.patch` version of the action.
+where `project_board_url` is the url of the project board to add the issue to.
