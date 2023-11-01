@@ -5,7 +5,6 @@ This action can be used in the following manner:
 ```yaml
 jobs:
   linting:
-    if: github.event.pull_request.draft == false
     runs-on: ubuntu-latest
     steps:
       - uses: UCL-MIRSG/.github/actions/linting@vx.y.z
@@ -19,7 +18,6 @@ also requires [Ansible](https://www.ansible.com) then modify the above to:
 ```yaml
 jobs:
   linting:
-    if: github.event.pull_request.draft == false
     runs-on: ubuntu-latest
     steps:
       - uses: UCL-MIRSG/.github/actions/linting@vx.y.z
