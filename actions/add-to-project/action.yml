@@ -10,6 +10,10 @@ inputs:
     description: Application private key
     required: true
 
+  project-url:
+    description: URL of the project board to add issues to
+    default: https://github.com/orgs/UCL-MIRSG/projects/3
+
 runs:
   using: composite
   steps:
@@ -23,5 +27,5 @@ runs:
     - name: Get project data
       uses: actions/add-to-project@v0.5.0
       with:
-        project-url: https://github.com/orgs/UCL-MIRSG/projects/3
+        project-url: ${{ input.project-url }}
         github-token: ${{ steps.generate-token.outputs.token }}
