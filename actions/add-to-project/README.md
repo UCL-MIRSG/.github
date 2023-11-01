@@ -11,7 +11,7 @@ jobs:
         with:
           app-id: ${{ secrets.APP_ID }}
           app-pem: ${{ secrets.APP_PEM }}
-          project-id: project_board_url # optional: defaults to the project board url
+          project-url: project_board_url # optional: defaults to https://github.com/orgs/UCL-MIRSG/projects/3
 ```
 
 where `x.y.z` is the `major.minor.patch` version of the action.
