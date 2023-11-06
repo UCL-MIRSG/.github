@@ -27,5 +27,5 @@ runs:
     - name: Get project data
       uses: actions/add-to-project@v0.5.0
       with:
-        project-url: ${{ input.project-url }}
+        project-url: ${{ inputs.project-url }}
         github-token: ${{ steps.generate-token.outputs.token }}
