@@ -11,6 +11,10 @@ inputs:
     description: Path to use when checking out the repository
     required: false
     default: ./
+  tests_path:
+    description: Change to this directory before running `molecule test`
+    required: false
+    default: ./
 
 runs:
   using: composite
@@ -32,5 +36,5 @@ runs:
     - name: Test with molecule
       shell: bash
       run: |
-        cd "${{ inputs.checkout_path }}"
+        cd "${{ inputs.tests_path }}"
         molecule test --scenario-name  "${{ inputs.scenario }}"
