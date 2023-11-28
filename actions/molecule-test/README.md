@@ -32,3 +32,18 @@ jobs:
         with:
           scenario: ${{ matrix.molecule_scenario }}
 ```
+
+If you are testing an Ansible Collection, Molecule requires your repository to be in a specific
+path - `ansible_collections/<namespace>/<collection nane>`. You can set the checkout path
+using the `checkout_path` input:
+
+```yaml
+jobs:
+  molecule:
+    runs-on: ubuntu-latest        
+    steps:
+      - name: Run `molecule test`
+        uses: UCL-MIRSG/.github/actions/molecule-test@vx.y.z
+        with:
+          checkout_path: ansible_collections/my_namespace/my_collection
+```
