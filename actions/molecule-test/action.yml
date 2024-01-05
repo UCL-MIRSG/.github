@@ -7,6 +7,10 @@ inputs:
     description: Name of the scenario to run the tests on
     required: false
     default: default
+  base_config:
+    description: Path to the base molecule configuration
+    required: false
+    default: ./.config/molecule/config.yml
   checkout_path:
     description: Path to use when checking out the repository
     required: false
@@ -37,4 +41,4 @@ runs:
       shell: bash
       run: |
         cd "${{ inputs.tests_path }}"
-        molecule test --scenario-name  "${{ inputs.scenario }}"
+        molecule --base-config "${{ inputs.base_config }}" test --scenario-name  "${{ inputs.scenario }}"
