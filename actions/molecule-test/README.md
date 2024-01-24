@@ -32,3 +32,26 @@ jobs:
         with:
           scenario: ${{ matrix.molecule_scenario }}
 ```
+
+If you are testing an Ansible Collection, Molecule requires your repository to be in a specific
+path - `ansible_collections/<namespace>/<collection name>`. Another requirement is that your
+Molecule configuration is not at the top-level of the repository - you should put it in e.g.
+a `tests/` directory.
+
+To use this action to test your Collection, you will need to specify a `checkout_path` and
+`tests/path`:
+
+```yaml
+jobs:
+  molecule:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run `molecule test`
+        uses: UCL-MIRSG/.github/actions/molecule-test@vx.y.z
+        with:
+          checkout_path: ansible_collections/my_namespace/my_collection
+          tests_path: ansible_collections/my_namespace/my_collection/tests
+```
+
+Note, the `tests_path` is relative to the `$GITHUB_WORKSPACE` path, not to the
+`checkout_path`.

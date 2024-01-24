@@ -7,12 +7,26 @@ inputs:
     description: Name of the scenario to run the tests on
     required: false
     default: default
+  base_config:
+    description: Path to the base molecule configuration
+    required: false
+    default: ./.config/molecule/config.yml
+  checkout_path:
+    description: Path to use when checking out the repository
+    required: false
+    default: ./
+  tests_path:
+    description: Change to this directory before running `molecule test`
+    required: false
+    default: ./
 
 runs:
   using: composite
   steps:
     - name: Check out the codebase
       uses: actions/checkout@v4
+      with:
+        path: "${{ inputs.checkout_path }}"
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
@@ -25,4 +39,6 @@ runs:
         python3 -m pip install ansible molecule molecule-plugins[docker] docker requests
     - name: Test with molecule
       shell: bash
-      run: molecule test --scenario-name  "${{ inputs.scenario }}"
+      run: |
+        cd "${{ inputs.tests_path }}"
+        molecule --base-config "${{ inputs.base_config }}" test --scenario-name  "${{ inputs.scenario }}"
