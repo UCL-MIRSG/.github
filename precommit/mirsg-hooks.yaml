@@ -1,5 +1,20 @@
 exclude: .crt$
 repos:
+  - repo: https://github.com/adrienverge/yamllint
+    rev: v1.33.0
+    hooks:
+      - id: yamllint
+        args:
+          - >-
+            --config-data={
+              extends: default,
+              rules: {
+                comments: {
+                  min-spaces-from-content: 1
+                }
+              }
+            }
+          - --strict
   - repo: https://github.com/AleksaC/hadolint-py
     rev: v2.12.0.3
     hooks:
