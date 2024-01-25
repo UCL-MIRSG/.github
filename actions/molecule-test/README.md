@@ -8,13 +8,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run `molecule test`
-        uses: UCL-MIRSG/.github/actions/molecule-test@vx.y.z
+        uses: UCL-MIRSG/.github/actions/molecule-test@vx
 ```
 
-where `x.y.z` is the `major.minor.patch` version of the action you would like to use.
+where `x` is the `major` version of the action you would like to use.
 
-The above workflow will run the `default` scenario for your role. If you would like to
-specify a different scenario, you can do so with the `scenario` input:
+The above workflow will run the `default` scenario for your role. If you would
+like to specify a different scenario, you can do so with the `scenario` input:
 
 ```yaml
 jobs:
@@ -28,18 +28,18 @@ jobs:
           - rocky8
     steps:
       - name: Run `molecule test`
-        uses: UCL-MIRSG/.github/actions/molecule-test@vx.y.z
+        uses: UCL-MIRSG/.github/actions/molecule-test@vx
         with:
           scenario: ${{ matrix.molecule_scenario }}
 ```
 
-If you are testing an Ansible Collection, Molecule requires your repository to be in a specific
-path - `ansible_collections/<namespace>/<collection name>`. Another requirement is that your
-Molecule configuration is not at the top-level of the repository - you should put it in e.g.
-a `tests/` directory.
+If you are testing an Ansible Collection, Molecule requires your repository to
+be in a specific path - `ansible_collections/<namespace>/<collection name>`.
+Another requirement is that your Molecule configuration is not at the top-level
+of the repository - you should put it in e.g. a `tests/` directory.
 
-To use this action to test your Collection, you will need to specify a `checkout_path` and
-`tests/path`:
+To use this action to test your Collection, you will need to specify a
+`checkout_path` and `tests/path`:
 
 ```yaml
 jobs:
@@ -47,7 +47,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run `molecule test`
-        uses: UCL-MIRSG/.github/actions/molecule-test@vx.y.z
+        uses: UCL-MIRSG/.github/actions/molecule-test@vx
         with:
           checkout_path: ansible_collections/my_namespace/my_collection
           tests_path: ansible_collections/my_namespace/my_collection/tests

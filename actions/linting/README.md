@@ -7,20 +7,20 @@ jobs:
   linting:
     runs-on: ubuntu-latest
     steps:
-      - uses: UCL-MIRSG/.github/actions/linting@vx.y.z
+      - uses: UCL-MIRSG/.github/actions/linting@vx
         with:
           pre-commit-config: ./.pre-commit-config.yaml
 ```
 
-where `x.y.z` is the `major.minor.patch` version of the action. If the linting
-also requires [Ansible](https://www.ansible.com) then modify the above to:
+where `x` is the `major` version of the action. If the linting also requires
+[Ansible](https://www.ansible.com) then modify the above to:
 
 ```yaml
 jobs:
   linting:
     runs-on: ubuntu-latest
     steps:
-      - uses: UCL-MIRSG/.github/actions/linting@vx.y.z
+      - uses: UCL-MIRSG/.github/actions/linting@vx
         with:
           ansible-roles-config: ./requirements.yml
           pre-commit-config: ./.pre-commit-config.yaml
