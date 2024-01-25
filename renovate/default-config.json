@@ -1,19 +1,22 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base",
+    "config:best-practices",
+    "schedule:automergeWeekdays",
     "schedule:monthly",
+    ":assignAndReview(team:mirsg)",
+    ":automergeBranch",
     ":disableDependencyDashboard",
     ":enablePreCommit",
-    ":noUnscheduledUpdates"
+    ":label(renovate)",
+    ":noUnscheduledUpdates",
+    ":prHourlyLimitNone"
   ],
   "commitMessageAction": "Renovate:",
-  "reviewers": ["team:mirsg"],
   "packageRules": [
     {
-      "description": "Automatically merge minor and patch-level updates",
+      "description": "Automatically merge, minor and patch-level updates",
       "automerge": true,
-      "automergeType": "branch",
       "matchManagers": ["github-actions", "pre-commit"],
       "matchUpdateTypes": ["digest", "minor", "patch"]
     },
@@ -21,6 +24,25 @@
       "description": "Shorten commit titles",
       "commitMessageTopic": "{{depName}}",
       "matchManagers": ["github-actions", "pre-commit"]
+    },
+    {
+      "description": "Combine action artefact updates together",
+      "groupName": "artefacts",
+      "matchDepNames": ["actions/download-artifact", "actions/upload-artifact"]
+    },
+    {
+      "description": "Only allow major updates",
+      "enabled": false,
+      "matchDepNames": ["renovatebot/pre-commit-hooks"],
+      "matchUpdateTypes": ["minor", "patch", "pin"]
+    },
+    {
+      "description": "Support loose versioning",
+      "matchDepNames": [
+        "cmhughes/latexindent.pl",
+        "shellcheck-py/shellcheck-py"
+      ],
+      "versioning": "loose"
     }
   ]
 }
