@@ -1,37 +1,11 @@
 repos:
-  - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.5.0
+  - repo: https://github.com/UCL-MIRSG/.github
+    rev: v0.40.0
     hooks:
-      - id: check-case-conflict
-      - id: check-merge-conflict
-      - id: end-of-file-fixer
-      - id: mixed-line-ending
-        args:
-          - --fix=lf
-      - id: trailing-whitespace
-  - repo: https://github.com/pre-commit/mirrors-prettier
-    rev: v3.0.3
-    hooks:
-      - id: prettier
+      - id: mirsg-hooks
   - repo: https://github.com/renovatebot/pre-commit-hooks
-    rev: 37.33.2
+    rev: 37.44.0
     hooks:
       - id: renovate-config-validator
         args:
           - renovate/default-config.json
-  - repo: https://github.com/codespell-project/codespell
-    rev: v2.2.6
-    hooks:
-      - id: codespell
-  - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.1.9
-    hooks:
-      - id: ruff
-        args:
-          - --exit-non-zero-on-fix
-          - --fix
-      - id: ruff-format
-  - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: 0.27.3
-    hooks:
-      - id: check-github-workflows
