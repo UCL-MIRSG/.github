@@ -13,6 +13,12 @@
     ":prHourlyLimitNone"
   ],
   "commitMessageAction": "Renovate:",
+  "gradle": {
+    "enabled": false
+  },
+  "maven": {
+    "enabled": false
+  },
   "packageRules": [
     {
       "description": "Automatically merge, minor and patch-level updates",
