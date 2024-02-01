@@ -1,3 +1,4 @@
+---
 exclude: .crt$
 repos:
   - repo: https://github.com/adrienverge/yamllint

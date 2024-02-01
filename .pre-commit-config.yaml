@@ -1,3 +1,4 @@
+---
 repos:
   - repo: https://github.com/UCL-MIRSG/.github
     rev: v0.43.0
