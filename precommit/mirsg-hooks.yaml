@@ -68,6 +68,7 @@ repos:
       - id: check-executables-have-shebangs
       - id: check-merge-conflict
       - id: check-shebang-scripts-are-executable
+        exclude: \.j2$
       - id: destroyed-symlinks
       - id: end-of-file-fixer
       - id: mixed-line-ending
