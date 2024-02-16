@@ -10,11 +10,41 @@ repos:
             --config-data={
               extends: default,
               rules: {
+                anchors: enable,
+                braces: {
+                  forbid: true
+                },
+                brackets: {
+                  forbid: true
+                },
+                colons: enable,
+                commas: enable,
                 comments: {
                   min-spaces-from-content: 1
                 },
+                comments-indentation: enable,
+                document-end: disable,
+                document-start: enable,
+                empty-lines: enable,
+                empty-values: disable,
+                float-values: enable,
+                hyphens: enable,
+                indentation: enable,
+                key-duplicates: enable,
+                key-ordering: disable,
                 line-length: {
-                  level: warning
+                  max: 160
+                },
+                new-line-at-end-of-file: enable,
+                new-lines: enable,
+                octal-values: enable,
+                quoted-strings: {
+                  quote-type: double,
+                  required: only-when-needed
+                },
+                trailing-spaces: enable,
+                truthy: {
+                  check-keys: false
                 }
               }
             }
