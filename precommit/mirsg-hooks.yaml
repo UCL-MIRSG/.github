@@ -12,10 +12,12 @@ repos:
               rules: {
                 comments: {
                   min-spaces-from-content: 1
+                },
+                line-length: {
+                  level: warning
                 }
               }
             }
-          - --strict
   - repo: https://github.com/AleksaC/hadolint-py
     rev: v2.12.0.3
     hooks:
