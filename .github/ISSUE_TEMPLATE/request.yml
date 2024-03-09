@@ -2,7 +2,7 @@
 name: Service Request
 description: A service request to the MIRSG team
 title: "📥 [REQUEST]: "
-labels: ["request"] # yamllint disable-line
+labels: ["request"] # yamllint disable-line rule:quoted-strings rule:brackets
 body:
   - type: textarea
     id: request-description
