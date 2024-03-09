@@ -26,7 +26,7 @@ runs:
     - name: Check out the codebase
       uses: actions/checkout@v4
       with:
-        path: "${{ inputs.checkout_path }}"
+        path: ${{ inputs.checkout_path }}
     - name: Set up Python
       uses: actions/setup-python@v4
       with:

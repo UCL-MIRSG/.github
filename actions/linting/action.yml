@@ -23,7 +23,7 @@ runs:
         path: |-
           ~/.ansible
           ~/.cache/pre-commit
-        key: "\
+        key: "\  # yamllint disable-line rule:quoted-strings
           cache-\
           ${{ hashFiles(inputs.ansible-roles-config) }}-\
           ${{ hashFiles(inputs.pre-commit-config) }}\
