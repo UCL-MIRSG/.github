@@ -12,7 +12,7 @@ repos:
               rules: {
                 anchors: enable,
                 braces: {
-                  forbid: non-empty
+                  forbid: true
                 },
                 brackets: {
                   forbid: true
