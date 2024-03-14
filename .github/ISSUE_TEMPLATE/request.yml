@@ -2,7 +2,8 @@
 name: Service Request
 description: A service request to the MIRSG team
 title: "📥 [REQUEST]: "
-labels: ["request"]
+labels:
+  - request
 body:
   - type: textarea
     id: request-description
