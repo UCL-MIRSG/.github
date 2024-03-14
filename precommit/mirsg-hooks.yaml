@@ -15,7 +15,7 @@ repos:
                   forbid: non-empty
                 },
                 brackets: {
-                  forbid: non-empty
+                  forbid: true
                 },
                 colons: enable,
                 commas: enable,
