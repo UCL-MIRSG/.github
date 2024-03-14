@@ -26,7 +26,7 @@ runs:
         key: \
           cache-\
           ${{ hashFiles(inputs.ansible-roles-config) }}-\
-          ${{ hashFiles(inputs.pre-commit-config) }}\
+          ${{ hashFiles(inputs.pre-commit-config) }}
       if: inputs.ansible-roles-config != 'missing'
 
     - name: Cache pre-commit
