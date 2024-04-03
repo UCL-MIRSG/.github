@@ -23,7 +23,7 @@
     {
       "description": "Automatically merge, minor and patch-level updates",
       "automerge": true,
-      "matchManagers": ["github-actions", "pre-commit"],
+      "matchManagers": ["dockerfile", "github-actions", "pre-commit"],
       "matchUpdateTypes": ["digest", "minor", "patch"]
     },
     {
