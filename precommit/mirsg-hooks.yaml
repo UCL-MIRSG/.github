@@ -76,7 +76,7 @@ repos:
         args:
           - --force-exclude
   - repo: https://github.com/Lucas-C/pre-commit-hooks
-    rev: v1.5.4
+    rev: v1.5.5
     hooks:
       - id: forbid-tabs
   - repo: https://github.com/pappasam/toml-sort
