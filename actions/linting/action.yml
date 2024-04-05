@@ -18,7 +18,7 @@ runs:
       uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
 
     - name: Cache ansible & pre-commit
-      uses: actions/cache@e12d46a63a90f2fae62d114769bbf2a179198b5c # v3
+      uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # v4
       with:
         path: |-
           ~/.ansible
@@ -32,7 +32,7 @@ runs:
       if: inputs.ansible-roles-config != 'missing'
 
     - name: Cache pre-commit
-      uses: actions/cache@e12d46a63a90f2fae62d114769bbf2a179198b5c # v3
+      uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # v4
       with:
         path: ~/.cache/pre-commit
         key: cache-${{ hashFiles(inputs.pre-commit-config) }}
