@@ -4,8 +4,8 @@
 > software as well as providing solutions for storage and curation of data.
 
 The medical imaging research software group (MIRSG) is a subgroup of the
-Research Software Development group (RSDG) at UCL jointly run with Prof Geoff
-Parker at the Centre for Medical Imaging Computing (CMIC) and collaborating
+Research Software Development group (RSDG) at UCL jointly run with Neil Oxtoby
+at the Centre for Medical Imaging Computing (CMIC) and collaborating
 closely with the UCLH Clinical Research Informatics Unit.
 
 The MIRSG aims to support the medical imaging research community by:
