@@ -35,8 +35,8 @@ body:
       label: Dependencies
       description: |-
         What other work does this depend on? Enter the github issue
-        number in the form `- [ ] #356` or `- [ ] UCL-MIRSG/repo-name#243` 
-		to make a checklist
+        number in the form `- [ ] #356` or `- [ ] UCL-MIRSG/repo-name#243`
+        to make a checklist
       placeholder: "- [ ] #356"
     validations:
       required: false
