@@ -48,9 +48,9 @@ body:
   - type: markdown
     attributes:
       value: |-
-        Thanks you for raising this problem!
+        Thank you for identifying this problem!
         ---
-        Fill in the below once the problem is resolved:
+        Fill in the below once the problem has a resolution:
   - type: textarea
     id: resolution
     attributes:
