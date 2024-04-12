@@ -8,14 +8,14 @@ projects:
 body:
   - type: markdown
     attributes:
-      value: |-
+      value: >-
         Ask any question, seek advice or ask for feedback on a proposed approach
         before starting work.
   - type: textarea
     id: short_description
     attributes:
       label: Short Description
-      description: Briefly summarise the question
+      description: Briefly summarise the question.
       placeholder: What is the question? What are you looking for?
     validations:
       required: true
@@ -23,13 +23,13 @@ body:
     id: details
     attributes:
       label: Details
-      description: Provide any additional information that may be useful
+      description: Provide any additional information that may be useful.
       placeholder: e.g. Additional context, links to documentation and diagrams, etc.
     validations:
       required: false
   - type: markdown
     attributes:
-      value: |-
+      value: >-
         Thanks for asking this question!
         ---
         Fill in the below once the question is answered:
@@ -37,9 +37,9 @@ body:
     id: next_steps
     attributes:
       label: Next Steps/Accepted Response
-      description: |-
+      description: >-
         What was the answer to the question? What are the next steps?
         Reference any related issues or pull requests.
-      placeholder: e.g. "We decided to do x, y, z in #167 to address this question"
+      placeholder: "e.g. We decided to do x, y, z in #167 to address this question"
     validations:
       required: false
