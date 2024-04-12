@@ -24,8 +24,10 @@ body:
     attributes:
       label: Acceptance Criteria
       description: >-
-        What must be done for this work to be considered complete?
-        These can be
+        What must be done for this work to be considered complete? These can be
+        a checklist of tasks or a description of the expected outcome. If
+        complex, consider creating new issues for each task and linking them
+        here.
       placeholder: "- [ ] e.g. x is done in y way so that z can be achieved"
     validations:
       required: false
