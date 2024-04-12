@@ -1,0 +1,45 @@
+---
+name: Question
+description: Ask a question, seek advice or ask for feedback
+labels:
+  - question
+projects:
+  - UCL-MIRSG/3
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Ask any question, seek advice or ask for feedback on a proposed approach
+        before starting work.
+  - type: textarea
+    id: short_description
+    attributes:
+      label: Short Description
+      description: Briefly summarise the question
+      placeholder: What is the question? What are you looking for?
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: Provide any additional information that may be useful
+      placeholder: e.g. Additional context, links to documentation and diagrams, etc.
+    validations:
+      required: false
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for asking this question!
+        ---
+        Fill in the below once the question is answered:
+  - type: textarea
+    id: next_steps
+    attributes:
+      label: Next Steps/Accepted Response
+      description: |
+        What was the answer to the question? What are the next steps?
+        Reference any related issues or pull requests.
+      placeholder: "e.g. 'We decided to do x, y, z in #167 to address this question'"
+    validations:
+      required: false
