@@ -8,7 +8,7 @@ projects:
 body:
   - type: markdown
     attributes:
-      value: |
+      value: |-
         Ask any question, seek advice or ask for feedback on a proposed approach
         before starting work.
   - type: textarea
@@ -29,7 +29,7 @@ body:
       required: false
   - type: markdown
     attributes:
-      value: |
+      value: |-
         Thanks for asking this question!
         ---
         Fill in the below once the question is answered:
@@ -37,7 +37,7 @@ body:
     id: next_steps
     attributes:
       label: Next Steps/Accepted Response
-      description: |
+      description: |-
         What was the answer to the question? What are the next steps?
         Reference any related issues or pull requests.
       placeholder: "e.g. 'We decided to do x, y, z in #167 to address this question'"

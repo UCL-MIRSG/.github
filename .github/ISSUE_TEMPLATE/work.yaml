@@ -8,7 +8,7 @@ projects:
 body:
   - type: markdown
     attributes:
-      value: |
+      value: |-
         Add any new work item - this may be a feature, story, requirement,
         service request or general task.
   - type: textarea
@@ -23,7 +23,7 @@ body:
     id: acceptance_criteria
     attributes:
       label: Acceptance Criteria
-      description: |
+      description: |-
         What must be done for this work to be considered complete?
         These can be
       placeholder: "- [ ] e.g. x is done in y way so that z can be achieved"
@@ -33,7 +33,7 @@ body:
     id: dependencies
     attributes:
       label: Dependencies
-      description: |
+      description: |-
         What other work does this depend on? Enter the github issue
         number in the form `- [ ] #356` or `- [ ] repo-name#243` to make
         a checklist
