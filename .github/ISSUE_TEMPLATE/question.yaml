@@ -40,6 +40,6 @@ body:
       description: >-
         What was the answer to the question? What are the next steps?
         Reference any related issues or pull requests.
-      placeholder: e.g. "We decided to do x, y, z in #167 to address this question"
+      placeholder: "e.g. We decided to do x, y, z in #167 to address this question"
     validations:
       required: false

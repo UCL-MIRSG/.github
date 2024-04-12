@@ -58,6 +58,6 @@ body:
       description: >-
         What was done to resolve the problem?
         What was the root cause? Reference any related issues or pull requests.
-      placeholder: e.g. "The problem was resolved by doing x, y, z in #123"
+      placeholder: "e.g. The problem was resolved by doing x, y, z in #123"
     validations:
       required: false
