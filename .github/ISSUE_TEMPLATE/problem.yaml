@@ -43,7 +43,7 @@ body:
     id: details
     attributes:
       label: Details
-      description: Provide any additional information that may be useful
+      description: Provide any additional information that may be useful.
       placeholder: e.g. Additional context, links to documentation and diagrams, etc.
   - type: markdown
     attributes:

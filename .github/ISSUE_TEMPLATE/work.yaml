@@ -15,7 +15,7 @@ body:
     id: short_description
     attributes:
       label: Short Description
-      description: Briefly summarise the work to be done
+      description: Briefly summarise the work to be done.
       placeholder: What needs to be done?
     validations:
       required: true
@@ -38,7 +38,7 @@ body:
       description: >-
         What other work does this depend on? Enter the github issue
         number in the form `- [ ] #356` or `- [ ] UCL-MIRSG/repo-name#243`
-        to make a checklist
+        to make a checklist.
       placeholder: "- [ ] #356"
     validations:
       required: false
@@ -46,7 +46,7 @@ body:
     id: details
     attributes:
       label: Details
-      description: Provide any additional information that may be useful
+      description: Provide any additional information that may be useful.
       placeholder: e.g. Additional context, links to documentation and diagrams, etc.
     validations:
       required: false
