@@ -9,7 +9,7 @@ Note, the two `/` is intentional.
 ```json5
 {
   $schema: "https://docs.renovatebot.com/renovate-schema.json",
-  extends: ["github>UCL-MIRSG/.github//renovate/default-config.json5"],
+  extends: ["github>UCL-MIRSG/.github//renovate/default-config.json"],
 }
 ```
 
