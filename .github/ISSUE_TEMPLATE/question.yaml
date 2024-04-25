@@ -24,22 +24,23 @@ body:
     attributes:
       label: Details
       description: Provide any additional information that may be useful.
-      placeholder: e.g. Additional context, links to documentation and diagrams, etc.
+      placeholder:
+        e.g. Additional context, links to documentation and diagrams, etc.
     validations:
       required: false
   - type: markdown
     attributes:
       value: >-
-        Thanks for asking this question!
-        ---
-        Fill in the below once the question is answered:
+        Thanks for asking this question! --- Fill in the below once the question
+        is answered:
   - type: textarea
     id: next_steps
     attributes:
       label: Next Steps/Accepted Response
       description: >-
-        What was the answer to the question? What are the next steps?
-        Reference any related issues or pull requests.
-      placeholder: "e.g. We decided to do x, y, z in #167 to address this question"
+        What was the answer to the question? What are the next steps? Reference
+        any related issues or pull requests.
+      placeholder:
+        "e.g. We decided to do x, y, z in #167 to address this question"
     validations:
       required: false
