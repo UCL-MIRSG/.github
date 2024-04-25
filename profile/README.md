@@ -4,7 +4,8 @@
 > software as well as providing solutions for storage and curation of data.
 
 The medical imaging research software group (MIRSG) is a subgroup of the
-Advanced Research Computing (ARC) Centre's Collaborations team, and is run as a joint initiative with the Centre for Medical Image Computing (CMIC).
+Advanced Research Computing (ARC) Centre's Collaborations team, and is run as a
+joint initiative with the Centre for Medical Image Computing (CMIC).
 
 The MIRSG aims to support the medical imaging research community by:
 

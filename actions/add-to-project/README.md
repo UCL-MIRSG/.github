@@ -1,7 +1,7 @@
 # add-to-project
 
-This action can be used in the following manner to add issues to the [default
-MIRSG project board](https://github.com/orgs/UCL-MIRSG/projects/3):
+This action can be used in the following manner to add issues to the
+[default MIRSG project board](https://github.com/orgs/UCL-MIRSG/projects/3):
 
 ```yaml
 jobs:

@@ -24,8 +24,9 @@ body:
     attributes:
       label: Evidence/Steps to Reproduce
       description: >-
-        Can you reproduce the problem? If so, what are the steps to reproduce it?
-        Otherwise, provide any evidence that helps to understand the problem.
+        Can you reproduce the problem? If so, what are the steps to reproduce
+        it? Otherwise, provide any evidence that helps to understand the
+        problem.
       placeholder: e.g. List of steps, screenshots, logs, error messages, etc.
     validations:
       required: false
@@ -34,9 +35,10 @@ body:
     attributes:
       label: Acceptance Criteria/Expected Behaviour
       description: >-
-        What is the expected behaviour once the problem is resolved?
-        How will you know when the problem is fixed?
-      placeholder: e.g. "When the problem is resolved, the system should do x, y, z"
+        What is the expected behaviour once the problem is resolved? How will
+        you know when the problem is fixed?
+      placeholder:
+        e.g. "When the problem is resolved, the system should do x, y, z"
     validations:
       required: false
   - type: textarea
@@ -44,7 +46,8 @@ body:
     attributes:
       label: Details
       description: Provide any additional information that may be useful.
-      placeholder: e.g. Additional context, links to documentation and diagrams, etc.
+      placeholder:
+        e.g. Additional context, links to documentation and diagrams, etc.
   - type: markdown
     attributes:
       value: |-
@@ -56,8 +59,8 @@ body:
     attributes:
       label: Resolution
       description: >-
-        What was done to resolve the problem?
-        What was the root cause? Reference any related issues or pull requests.
+        What was done to resolve the problem? What was the root cause? Reference
+        any related issues or pull requests.
       placeholder: "e.g. The problem was resolved by doing x, y, z in #123"
     validations:
       required: false
