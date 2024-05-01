@@ -70,7 +70,7 @@ repos:
           - --fix
       - id: ruff-format
   - repo: https://github.com/crate-ci/typos
-    rev: v1.20.4
+    rev: v1.21.0
     hooks:
       - id: typos
         args:
