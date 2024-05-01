@@ -62,7 +62,7 @@ repos:
           - --exclude=.github
           - --exclude=docker-compose.yml
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.3.5
+    rev: v0.4.2
     hooks:
       - id: ruff
         args:
