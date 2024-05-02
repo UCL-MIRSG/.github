@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # yamllint disable-line rule:line-length
-      - uses: UCL-MIRSG/.github/actions/add-to-project@fa984de2f3f5eee75114b90fc721a96e57f33562 # v0.50.0
+      - uses: UCL-MIRSG/.github/actions/add-to-project@f7de6ccf89dd8d7b5417a1ebd14e1618e7c72000 # v0.77.0
         with:
           app-id: ${{ secrets.APP_ID }}
           app-pem: ${{ secrets.APP_PEM }}
