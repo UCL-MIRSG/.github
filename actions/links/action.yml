@@ -8,7 +8,9 @@ inputs:
     required: true
 
   lychee-args:
-    description: Arguments to pass to lychee (https://github.com/lycheeverse/lychee#commandline-parameters)
+    description:
+      Arguments to pass to lychee
+      (https://github.com/lycheeverse/lychee#commandline-parameters)
     default:
       --base . --verbose --no-progress './**/*.md' './**/*.html' './**/*.rst'
 
