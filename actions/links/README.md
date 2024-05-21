@@ -13,4 +13,18 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 ```
 
-where `x` is the `major` version of the action.
+where `x` is the `major` version of the action. If custom link checking is
+required, one can add custom inputs through `lychee-args`, i.e.:
+
+```yaml
+jobs:
+  linting:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: UCL-MIRSG/.github/actions/linting@vx
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          lychee-args:
+            --base . --verbose --no-progress './**/*.md' './**/*.html'
+            './**/*.rst'
+```
