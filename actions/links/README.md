@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 2
     steps:
-      - uses: paddyroddy/.github/actions/links@vx
+      - uses: UCL-MIRSG/.github/actions/links@vx
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 ```
