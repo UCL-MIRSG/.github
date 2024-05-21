@@ -1,0 +1,26 @@
+---
+name: Links
+description: Checks the links in a repo work
+
+inputs:
+  github-token:
+    description: GitHub token
+    required: true
+
+  lychee-args:
+    description: Arguments to pass to lychee
+    default:
+      --base . --verbose --no-progress './**/*.md' './**/*.html' './**/*.rst'
+
+runs:
+  using: composite
+  steps:
+    - name: Checkout source
+      uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4
+
+    - name: Check links
+      uses: lycheeverse/lychee-action@v1
+      with:
+        args: ${{ inputs.lychee-args }}
+        failIfEmpty: false
+        token: ${{ inputs.github-token }}
