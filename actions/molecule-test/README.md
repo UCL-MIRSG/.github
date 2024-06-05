@@ -53,8 +53,8 @@ jobs:
 Note, the `tests_path` is relative to the `$GITHUB_WORKSPACE` path, not to the
 `checkout_path`.
 
-If one requires a specific version of Ansible, then use the `ansible_version`
-argument, i.e. `ansible_version: 10.0.0`.
+If one requires a specific version of Ansible, then use the
+`ansible_major_version` argument, i.e. `ansible_major_version: 10`.
 
 By default, the action will default to `molecule test`, if running a specific
 command is required, then use the `molecule_command` argument, i.e.
