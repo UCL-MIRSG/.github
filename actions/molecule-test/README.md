@@ -7,8 +7,7 @@ jobs:
   molecule:
     runs-on: ubuntu-latest
     steps:
-      - name: Run `molecule test`
-        uses: UCL-MIRSG/.github/actions/molecule-test@vx
+      - uses: UCL-MIRSG/.github/actions/molecule-test@vx
 ```
 
 where `x` is the `major` version of the action you would like to use.
@@ -27,8 +26,7 @@ jobs:
           - centos7
           - rocky8
     steps:
-      - name: Run `molecule test`
-        uses: UCL-MIRSG/.github/actions/molecule-test@vx
+      - uses: UCL-MIRSG/.github/actions/molecule-test@vx
         with:
           scenario: ${{ matrix.molecule_scenario }}
 ```
@@ -46,8 +44,7 @@ jobs:
   molecule:
     runs-on: ubuntu-latest
     steps:
-      - name: Run `molecule test`
-        uses: UCL-MIRSG/.github/actions/molecule-test@vx
+      - uses: UCL-MIRSG/.github/actions/molecule-test@vx
         with:
           checkout_path: ansible_collections/my_namespace/my_collection
           tests_path: ansible_collections/my_namespace/my_collection/tests
@@ -58,3 +55,7 @@ Note, the `tests_path` is relative to the `$GITHUB_WORKSPACE` path, not to the
 
 If one requires a specific version of Ansible, then use the `ansible_version`
 argument, i.e. `ansible_version: 10.0.0`.
+
+By default, the action will default to `molecule test`, if running a specific
+command is required, then use the `molecule_command` argument, i.e.
+`molecule_command: converge`.
