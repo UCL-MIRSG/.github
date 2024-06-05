@@ -55,3 +55,6 @@ jobs:
 
 Note, the `tests_path` is relative to the `$GITHUB_WORKSPACE` path, not to the
 `checkout_path`.
+
+If one requires a specific version of Ansible, then use the `ansible_version`
+argument, i.e. `ansible_version: 10.0.0`.
