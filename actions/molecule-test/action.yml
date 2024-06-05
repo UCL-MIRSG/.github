@@ -1,10 +1,10 @@
 ---
 name: Molecule Test
-description: Run `molecule test` on an Ansible role
+description: Run a given molecule command on an Ansible role
 
 inputs:
   scenario:
-    description: Name of the scenario to run the tests on
+    description: Name of the scenario to run molecule on
     required: false
     default: default
   base_config:
@@ -16,12 +16,15 @@ inputs:
     required: false
     default: ./
   tests_path:
-    description: Change to this directory before running `molecule test`
+    description: Change to this directory before running the molecule command
     required: false
     default: ./
   ansible_version:
     description: Version of Ansible to use
     default: latest
+  molecule_command:
+    description: Command to run with molecule
+    default: test
 
 runs:
   using: composite
@@ -34,13 +37,12 @@ runs:
       uses: actions/setup-python@82c7e631bb3cdc910f68e0081d67478d79c6982d # v5
       with:
         python-version: 3.11
-    - name: Install test dependencies
+    - name: Install dependencies
       shell: bash
-      run: |-
-        sudo apt-get update && sudo apt-get -y install rsync
-        python3 -m pip install --upgrade pip
-        python3 -m pip install \
-        molecule molecule-plugins[docker] docker requests
+      run: >-
+        sudo apt-get update && sudo apt-get -y install rsync; python3 -m pip
+        install --upgrade pip; python3 -m pip install molecule
+        molecule-plugins[docker] docker requests
 
     - name: Install Ansible ${{ inputs.ansible_version }}
       if: ${{ inputs.ansible_version != 'latest' }}
@@ -52,10 +54,9 @@ runs:
       shell: bash
       run: python -m pip install ansible
 
-    - name: Test with molecule
+    - name: Run molecule command
       shell: bash
-      run: |-
-        cd "${{ inputs.tests_path }}"
-        molecule \
-        --base-config "${{ inputs.base_config }}" test \
+      run: >-
+        cd "${{ inputs.tests_path }}"; molecule --base-config "${{
+        inputs.base_config }}" ${{ inputs.molecule_command }}
         --scenario-name  "${{ inputs.scenario }}"
