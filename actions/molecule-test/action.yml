@@ -19,6 +19,9 @@ inputs:
     description: Change to this directory before running `molecule test`
     required: false
     default: ./
+  ansible_version:
+    description: Version of Ansible to use
+    default: latest
 
 runs:
   using: composite
@@ -37,7 +40,18 @@ runs:
         sudo apt-get update && sudo apt-get -y install rsync
         python3 -m pip install --upgrade pip
         python3 -m pip install \
-        ansible molecule molecule-plugins[docker] docker requests
+        molecule molecule-plugins[docker] docker requests
+
+    - name: Install Ansible ${{ inputs.ansible_version }}
+      if: ${{ inputs.ansible_version != 'latest' }}
+      shell: bash
+      run: python -m pip install ansible==${{ inputs.ansible_version }}
+
+    - name: Install Ansible latest version
+      if: ${{ inputs.ansible_version == 'latest' }}
+      shell: bash
+      run: python -m pip install ansible
+
     - name: Test with molecule
       shell: bash
       run: |-
