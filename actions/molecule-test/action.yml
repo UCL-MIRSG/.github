@@ -19,7 +19,7 @@ inputs:
     description: Change to this directory before running the molecule command
     required: false
     default: ./
-  ansible_version:
+  ansible_major_version:
     description: Version of Ansible to use
     default: latest
   molecule_command:
@@ -44,13 +44,13 @@ runs:
         install --upgrade pip; python3 -m pip install molecule
         molecule-plugins[docker] docker requests
 
-    - name: Install Ansible ${{ inputs.ansible_version }}
-      if: ${{ inputs.ansible_version != 'latest' }}
+    - name: Install Ansible ${{ inputs.ansible_major_version }}
+      if: ${{ inputs.ansible_major_version != 'latest' }}
       shell: bash
-      run: python -m pip install ansible==${{ inputs.ansible_version }}
+      run: python -m pip install ansible==${{ inputs.ansible_major_version }}.*
 
     - name: Install Ansible latest version
-      if: ${{ inputs.ansible_version == 'latest' }}
+      if: ${{ inputs.ansible_major_version == 'latest' }}
       shell: bash
       run: python -m pip install ansible
 
