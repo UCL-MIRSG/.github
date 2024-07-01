@@ -20,7 +20,7 @@ runs:
   steps:
     - name: Generate token
       id: generate-token
-      uses: actions/create-github-app-token@a0de6af83968303c8c955486bf9739a57d23c7f1 # v1
+      uses: actions/create-github-app-token@ad38cffc07bac6e3857755914c4c88bfd2db4da4 # v1
       with:
         app-id: ${{ inputs.app-id }}
         private-key: ${{ inputs.app-pem }}
