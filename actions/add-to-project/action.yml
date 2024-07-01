@@ -26,7 +26,7 @@ runs:
         private-key: ${{ inputs.app-pem }}
 
     - name: Get project data
-      uses: actions/add-to-project@9bfe908f2eaa7ba10340b31e314148fcfe6a2458 # v1.0.1
+      uses: actions/add-to-project@244f685bbc3b7adfa8466e08b698b5577571133e # v1.0.2
       with:
         project-url: ${{ inputs.project-url }}
         github-token: ${{ steps.generate-token.outputs.token }}
