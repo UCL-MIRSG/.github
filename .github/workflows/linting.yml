@@ -7,21 +7,14 @@ on:
       - main
       - renovate/**
   pull_request:
-    types:
-      - opened
-      - ready_for_review
-      - reopened
-      - synchronize
 
 jobs:
   linting:
-    if: github.event.pull_request.draft == false
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source
         uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
 
-      - name: Run pre-commit over the repo
-        uses: ./actions/linting
+      - uses: ./actions/linting
         with:
           pre-commit-config: ./.pre-commit-config.yaml
