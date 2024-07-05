@@ -1,7 +1,6 @@
 ---
 name: Manage issues on the projects board
 
-# yamllint disable-line rule:truthy
 on:
   issues:
     types:
