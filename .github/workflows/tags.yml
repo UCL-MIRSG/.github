@@ -1,7 +1,6 @@
 ---
 name: Bump Version Tag
 
-# yamllint disable-line rule:truthy
 on:
   push:
     branches:
@@ -29,7 +28,6 @@ jobs:
 
       - name: Bump version and push tag
         id: bump-version
-        # yamllint disable-line rule:line-length
         uses: anothrNick/github-tag-action@afe4b67b57b8ab0908e4767109a5342003639e2e # v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

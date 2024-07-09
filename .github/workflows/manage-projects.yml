@@ -1,7 +1,6 @@
 ---
 name: Manage issues on the projects board
 
-# yamllint disable-line rule:truthy
 on:
   issues:
     types:
@@ -11,8 +10,10 @@ jobs:
   add-issue-to-project:
     runs-on: ubuntu-latest
     steps:
-      # yamllint disable-line rule:line-length
-      - uses: UCL-MIRSG/.github/actions/add-to-project@610c6ef540b030d6346ad1ba0fd5eb270efd7526 # v0.95.0
+      - name: Checkout source
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
+
+      - uses: ./actions/add-to-project
         with:
           app-id: ${{ secrets.APP_ID }}
           app-pem: ${{ secrets.APP_PEM }}
