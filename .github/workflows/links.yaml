@@ -19,3 +19,8 @@ jobs:
       - uses: ./actions/links
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          lychee-args: >-
+            --exclude https://github.com/orgs/UCL-MIRSG/projects/3
+            --no-progress
+            --verbose
+            .
