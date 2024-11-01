@@ -11,8 +11,7 @@ inputs:
     description:
       Arguments to pass to lychee
       (https://github.com/lycheeverse/lychee#commandline-parameters)
-    default:
-      --base . --verbose --no-progress './**/*.md' './**/*.html' './**/*.rst'
+    default: --verbose --no-progress .
 
 runs:
   using: composite
