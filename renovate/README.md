@@ -14,6 +14,25 @@ To enable `Renovate` in a given repository, one must install and enable the
 
 One can then view the logs here <https://developer.mend.io/>.
 
+## Updating your Renovate configuration
+
+If you're updating your configuration, you might find it useful to run and debug
+your changes locally.
+
+First
+[install the Renovate CLI](https://docs.renovatebot.com/examples/self-hosting/),
+then perform a
+[dry run](https://docs.renovatebot.com/self-hosted-configuration/#dryrun) with
+the [`local` platform](https://docs.renovatebot.com/modules/platform/local/):
+
+```sh
+LOG_LEVEL=debug renovate --platform=local --dry-run=lookup
+```
+
+There will be a section in the logs
+`DEBUG: packageFiles with updates (repository=local)`. Under this section you
+will find info on all packages that Renovate is monitoring.
+
 ## Automerging
 
 To benefit from the automerging capabilities of the default config it is
