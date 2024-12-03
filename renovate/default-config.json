@@ -3,7 +3,7 @@
   "extends": [
     "github>UCL-ARC/.github//renovate/default-config.json",
     ":assignAndReview(team:mirsg)",
-    ":group:allNonMajor"
+    "group:allNonMajor"
   ],
   "gradle": {
     "enabled": false
