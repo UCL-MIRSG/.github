@@ -39,10 +39,10 @@ inputs:
     required: false
     default: ""
   git-release-bot-name:
-    description: "The git user name for commiting the release"
+    description: "The git user name for committing the release"
     required: true
   git-release-bot-email:
-    description: "The git user email for commiting the release"
+    description: "The git user email for committing the release"
     required: true
 
   access-token:
