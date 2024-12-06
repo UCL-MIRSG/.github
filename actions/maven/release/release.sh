@@ -2,7 +2,7 @@
 set -e
 
 # avoid the release loop by checking if the latest commit is a release commit
-readonly local last_release_commit_hash=$(git log --author="$GIT_RELEASE_BOT_NAME" --pretty=format:"%H" -1)
+last_release_commit_hash=$(git log --author="$GIT_RELEASE_BOT_NAME" --pretty=format:"%H" -1)
 echo "Last $GIT_RELEASE_BOT_NAME commit: ${last_release_commit_hash}"
 echo "Current commit: ${GITHUB_SHA}"
 if [[ "${last_release_commit_hash}" = "${GITHUB_SHA}" ]]; then
@@ -11,7 +11,7 @@ if [[ "${last_release_commit_hash}" = "${GITHUB_SHA}" ]]; then
 fi
 
 # Filter the branch to execute the release on
-readonly local branch=${GITHUB_REF##*/}
+branch=${GITHUB_REF##*/}
 echo "Current branch: ${branch}"
 if [[ -n "$RELEASE_BRANCH_NAME" && ! "${branch}" = "$RELEASE_BRANCH_NAME" ]]; then
      echo "Skipping for ${branch} branch"
