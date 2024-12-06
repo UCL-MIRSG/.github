@@ -19,8 +19,8 @@ if [[ -n "$RELEASE_BRANCH_NAME" && ! "${branch}" = "$RELEASE_BRANCH_NAME" ]]; th
 fi
 
 # Making sure we are on top of the branch
-git checkout ${GITHUB_REF##*/}
-git reset --hard ${GITHUB_SHA}
+git checkout "${GITHUB_REF##*/}"
+git reset --hard "${GITHUB_SHA}"
 
 # This script will do a release of the artifact according to http://maven.apache.org/maven-release/maven-release-plugin/
 git config --global user.email "$GIT_RELEASE_BOT_EMAIL";
@@ -29,7 +29,7 @@ git config --global user.name "$GIT_RELEASE_BOT_NAME";
 # Setup GPG
 if [[ $GPG_ENABLED ]]; then
      git config --global commit.gpgsign true
-     git config --global user.signingkey $GPG_KEY_ID
+     git config --global user.signingkey "$GPG_KEY_ID"
      echo "GPG_KEY_ID = $GPG_KEY_ID"
 
      echo  "$GPG_KEY" | base64 -d > private.key
@@ -43,5 +43,5 @@ if [[ -n "$MAVEN_LOCAL_REPO_PATH" ]]; then
 fi
 
 # D0 the release
-mvn $MAVEN_REPO_LOCAL -Dusername=$GITHUB_ACCESS_TOKEN release:prepare -B -Darguments="$MAVEN_ARGS"
-mvn $MAVEN_REPO_LOCAL release:perform -B -Darguments="$MAVEN_ARGS"
+mvn "$MAVEN_REPO_LOCAL" -Dusername="$GITHUB_ACCESS_TOKEN" release:prepare -B -Darguments="$MAVEN_ARGS"
+mvn "$MAVEN_REPO_LOCAL" release:perform -B -Darguments="$MAVEN_ARGS"

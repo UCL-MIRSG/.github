@@ -8,4 +8,4 @@ if [[ -n "$MAVEN_LOCAL_REPO_PATH" ]]; then
 fi
 
 # Do the copyright verification
-mvn $MAVEN_REPO_LOCAL -ntp $*
+mvn "$MAVEN_REPO_LOCAL" -ntp "$*"
