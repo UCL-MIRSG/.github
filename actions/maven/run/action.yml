@@ -1,33 +1,33 @@
 # action.yml
-name: 'OB release'
+name: "OB release"
 author: https://github.com/qcastel
-description: 'Release our java libraries for open banking'
+description: "Release our java libraries for open banking"
 branding:
   color: blue
   icon: unlock
 inputs:
-  maven-local-repo-path: 
-    description: 'The maven local repository path'
+  maven-local-repo-path:
+    description: "The maven local repository path"
     required: false
-    default: '$M2_HOME/repository'
+    default: "$M2_HOME/repository"
   maven-repo-server-id:
-    description: 'Maven server repository id to push the artefacts to'
+    description: "Maven server repository id to push the artefacts to"
     required: true
   maven-repo-server-username:
-    description: 'Maven server repository username'
+    description: "Maven server repository username"
     required: true
   maven-repo-server-password:
-    description: 'Maven server repository password'
+    description: "Maven server repository password"
     required: true
   maven-args:
-    description: 'The maven arguments'
+    description: "The maven arguments"
     required: false
-    default: ''
+    default: ""
 
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
-  args: 
+  using: "docker"
+  image: "Dockerfile"
+  args:
     - mvn-action.sh
     - ${{ inputs.maven-args }}
   env:
