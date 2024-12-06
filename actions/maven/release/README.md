@@ -23,7 +23,7 @@ automate the release for each commit.
     maven-repo-server-id: f${{ secrets.MVN_REPO_PRIVATE_REPO_USER }}
     maven-repo-server-password: ${{ secrets.MVN_REPO_PRIVATE_REPO_PASSWORD }}
     maven-repo-server-username: ${{ secrets.MVN_REPO_PRIVATE_REPO_USER }}
-    release-branch-name: master
+    release-branch-name: main
 ```
 
 where `x` is the `major` version of the action.
