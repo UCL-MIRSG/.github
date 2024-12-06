@@ -1,8 +1,14 @@
-# Maven release
+# Maven Release
+
+Allows one to release a Java application by a bot. Very handy
+if one needs to automate the release for each commit.
+
+> [!NOTE]
+> The release will allow one to set up a GPG key.
 
 ```yaml
 - name: Release
-  uses: qcastel/github-actions-maven/actions/release@master
+  uses: UCL-MIRSG/.github/actions/maven/release@vx
   with:
     access-token: ${{ secrets.GITHUB_ACCESS_TOKEN }}
     git-release-bot-email: release-bot@example.com
@@ -18,3 +24,5 @@
     maven-repo-server-username: ${{ secrets.MVN_REPO_PRIVATE_REPO_USER }}
     release-branch-name: master
 ```
+
+where `x` is the `major` version of the action.
