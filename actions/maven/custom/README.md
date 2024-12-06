@@ -1,6 +1,7 @@
 # Custom Maven Command
 
-Generic Maven action, allowing one to simply run a Maven command. It will be executed into a docker image, with Java 11 and Maven.
+Generic Maven action, allowing one to simply run a Maven command. It will be
+executed into a docker image, with Java 11 and Maven.
 
 To build a Java app
 

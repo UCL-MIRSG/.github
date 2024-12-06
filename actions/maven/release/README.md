@@ -1,8 +1,9 @@
 # Maven Release
 
-Allows one to release a Java application by a bot. Very handy
-if one needs to automate the release for each commit.
+Allows one to release a Java application by a bot. Very handy if one needs to
+automate the release for each commit.
 
+<!-- prettier-ignore -->
 > [!NOTE]
 > The release will allow one to set up a GPG key.
 
