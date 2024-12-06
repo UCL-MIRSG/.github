@@ -14,13 +14,23 @@ inputs:
     description: Enable gpg signing
     required: false
     default: false
-  gpg-key-id:
-    description: The GPG key ID
-    required: false
   gpg-key:
     description: The GPG key
     required: false
+  gpg-key-id:
+    description: The GPG key ID
+    required: false
 
+  git-release-bot-email:
+    description: The git user email for committing the release
+    required: true
+  git-release-bot-name:
+    description: The git user name for committing the release
+    required: true
+  maven-args:
+    description: The maven arguments for the release
+    required: false
+    default: ""
   maven-local-repo-path:
     description: The maven local repository path
     required: false
@@ -28,21 +38,11 @@ inputs:
   maven-repo-server-id:
     description: Maven server repository id to push the artefacts to
     required: true
-  maven-repo-server-username:
-    description: Maven server repository username
-    required: true
   maven-repo-server-password:
     description: Maven server repository password
     required: true
-  maven-args:
-    description: The maven arguments for the release
-    required: false
-    default: ""
-  git-release-bot-name:
-    description: The git user name for committing the release
-    required: true
-  git-release-bot-email:
-    description: The git user email for committing the release
+  maven-repo-server-username:
+    description: Maven server repository username
     required: true
 
   access-token:
@@ -60,16 +60,16 @@ runs:
     RELEASE_BRANCH_NAME: ${{ inputs.release-branch-name }}
 
     GPG_ENABLED: ${{ inputs.gpg-enabled }}
-    GPG_KEY_ID: ${{ inputs.gpg-key-id }}
     GPG_KEY: ${{ inputs.gpg-key }}
+    GPG_KEY_ID: ${{ inputs.gpg-key-id }}
 
+    MAVEN_ARGS: ${{ inputs.maven-args }}
     MAVEN_LOCAL_REPO_PATH: ${{ inputs.maven-local-repo-path }}
     MAVEN_REPO_SERVER_ID: ${{ inputs.maven-repo-server-id }}
-    MAVEN_REPO_SERVER_USERNAME: ${{ inputs.maven-repo-server-username }}
     MAVEN_REPO_SERVER_PASSWORD: ${{ inputs.maven-repo-server-password }}
-    MAVEN_ARGS: ${{ inputs.maven-args }}
+    MAVEN_REPO_SERVER_USERNAME: ${{ inputs.maven-repo-server-username }}
 
-    GIT_RELEASE_BOT_NAME: ${{ inputs.git-release-bot-name }}
     GIT_RELEASE_BOT_EMAIL: ${{ inputs.git-release-bot-email }}
+    GIT_RELEASE_BOT_NAME: ${{ inputs.git-release-bot-name }}
 
     GITHUB_ACCESS_TOKEN: ${{ inputs.access-token }}
