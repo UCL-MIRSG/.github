@@ -1,0 +1,62 @@
+# These settings are synced to GitHub by https://github.com/github/safe-settings
+# Example config:
+# https://github.com/github/safe-settings/blob/main-enterprise/docs/sample-settings/settings.yml
+---
+repository:
+  allow_auto_merge: true
+  allow_merge_commit: false
+  allow_rebase_merge: false
+  delete_branch_on_merge: true
+  has_discussions: false
+  has_downloads: false
+  has_wiki: false
+  squash_merge_commit_message: PR_BODY
+  squash_merge_commit_title: PR_TITLE
+
+autolinks:
+  - key_prefix: ARCMYS-
+    url_template: https://myservices-arc.uk.4me.com/requests/<num>
+    is_alphanumeric: false
+
+teams:
+  - name: mirsg
+    permission: admin
+
+# See available options:
+# https://docs.github.com/en/rest/orgs/rules#create-an-organization-repository-rulesetfor
+rulesets:
+  - name: Default
+    target: branch
+    enforcement: active
+
+    conditions:
+      ref_name:
+        include:
+          - ~DEFAULT_BRANCH
+
+    rules:
+      - type: deletion
+      - type: non_fast_forward # prevents force pushes
+
+  - name: Pull Requests
+    target: branch
+    enforcement: active
+
+    bypass_actors:
+      - actor_id: 2740 # Renovate Bot
+        actor_type: Integration
+        bypass_mode: always
+
+    conditions:
+      ref_name:
+        include:
+          - ~DEFAULT_BRANCH
+
+    rules:
+      - type: pull_request
+        parameters:
+          dismiss_stale_reviews_on_push: true
+          require_code_owner_review: false
+          require_last_push_approval: false
+          required_approving_review_count: 1
+          required_review_thread_resolution: false
