@@ -42,7 +42,7 @@ jobs:
           APP_ID: ${{ vars.SAFE_SETTINGS_APP_ID }}
           BLOCK_REPO_RENAME_BY_HUMAN: false
           DEPLOYMENT_CONFIG_FILE:
-            ${{ github.workspace }}/safe-settings/deployment-settings.yml
+            ${{ github.workspace }}/safe-settings/deployment-settings.yaml
           ENABLE_PR_COMMENT: true
           GH_ORG: ${{ vars.SAFE_SETTINGS_GH_ORG }}
           GITHUB_CLIENT_ID: ${{ vars.SAFE_SETTINGS_GITHUB_CLIENT_ID }}
