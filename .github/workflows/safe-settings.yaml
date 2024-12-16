@@ -9,7 +9,7 @@ jobs:
   safeSettingsSync:
     runs-on: ubuntu-latest
     env:
-      SAFE_SETTINGS_VERSION: 2.1.14
+      SAFE_SETTINGS_VERSION: 2.1.13
       SAFE_SETTINGS_CODE_DIR: ${{ github.workspace }}/.safe-settings-code
     steps:
       - name: Checkout source
