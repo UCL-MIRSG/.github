@@ -1,0 +1,97 @@
+# Value for safe-settings-set
+# https://github.com/github/safe-settings/blob/main-enterprise/helm/safe-settings/README.md
+---
+affinity: {}
+
+autoscaling:
+  enabled: false
+  maxReplicas: 10
+  minReplicas: 2
+  targetCPUUtilizationPercentage: 80
+
+deploymentConfig:
+  configvalidators:
+    - plugin: collaborators
+      error: "`Admin cannot be assigned to collaborators`"
+      script: >-
+        console.log(`baseConfig ${JSON.stringify(baseconfig)}`); return
+        baseconfig.permission != 'admin';
+  overridevalidators:
+    - plugin: branches
+      error: >-
+        `Branch protection required_approving_review_count cannot be overridden
+        to a lower value`
+      script: >-
+        console.log(`baseConfig ${JSON.stringify(baseconfig)}`);
+        console.log(`overrideConfig ${JSON.stringify(overrideconfig)}`); if (
+          baseconfig.protection.required_pull_request_reviews.required_approving_review_count
+        &&
+          overrideconfig.protection.required_pull_request_reviews.required_approving_review_count
+        ) {
+          return
+        overrideconfig.protection.required_pull_request_reviews.required_approving_review_count
+        >=
+          baseconfig.protection.required_pull_request_reviews.required_approving_review_count
+        } return true;
+    - plugin: labels
+      error: Some error
+      script: return true;
+  restrictedRepos:
+    exclude:
+    include:
+
+env: []
+envFrom: []
+extraObjects: []
+fullnameOverride: ""
+
+image:
+  pullPolicy: IfNotPresent
+  repository: ghcr.io/github/safe-settings
+  tag: ""
+
+imagePullSecrets: []
+
+ingress:
+  annotations: {}
+  className: ""
+  enabled: false
+  hosts:
+    - host: chart-example.local
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls: []
+
+nameOverride: ""
+nodeSelector: {}
+podAnnotations: {}
+
+podSecurityContext: {}
+replicaCount: 2
+resources: {}
+
+securityContext:
+  allowPrivilegeEscalation: false
+  capabilities:
+    drop:
+      - ALL
+  privileged: false
+  readOnlyRootFilesystem: true
+  runAsNonRoot: true
+  runAsUser: 1000
+
+service:
+  annotations: {}
+  port: 3000
+  type: ClusterIP
+
+serviceAccount:
+  annotations: {}
+  automountServiceAccountToken: false
+  create: true
+  name: ""
+
+tolerations: []
+volumeMounts: []
+volumes: []

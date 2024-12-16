@@ -35,11 +35,15 @@ jobs:
         env:
           ADMIN_REPO: .github
           APP_ID: ${{ vars.SAFE_SETTINGS_APP_ID }}
-          CONFIG_PATH: safe-settings
+          BLOCK_REPO_RENAME_BY_HUMAN: false
+          CONFIG_PATH: ${{ github.workspace }}/safe-settings
           DEPLOYMENT_CONFIG_FILE:
-            ${{ github.workspace }}/safe-settings/deployment-settings.yml
+            ${{ github.workspace }}/safe-settings/deployment-settings.yaml
+          ENABLE_PR_COMMENT: true
           GH_ORG: ${{ vars.SAFE_SETTINGS_GH_ORG }}
           GITHUB_CLIENT_ID: ${{ vars.SAFE_SETTINGS_GITHUB_CLIENT_ID }}
           GITHUB_CLIENT_SECRET:
             ${{ secrets.SAFE_SETTINGS_GITHUB_CLIENT_SECRET }}
+          LOG_LEVEL: trace
           PRIVATE_KEY: ${{ secrets.SAFE_SETTINGS_PRIVATE_KEY }}
+          SETTINGS_FILE_PATH: settings.yaml
