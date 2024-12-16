@@ -22,41 +22,23 @@ teams:
   - name: mirsg
     permission: admin
 
-# See available options:
-# https://docs.github.com/en/rest/orgs/rules#create-an-organization-repository-rulesetfor
-rulesets:
-  - name: Default
-    target: branch
-    enforcement: active
-
-    conditions:
-      ref_name:
-        include:
-          - ~DEFAULT_BRANCH
-
-    rules:
-      - type: deletion
-      - type: non_fast_forward # prevents force pushes
-
-  - name: Pull Requests
-    target: branch
-    enforcement: active
-
-    bypass_actors:
-      - actor_id: 2740 # Renovate Bot
-        actor_type: Integration
-        bypass_mode: always
-
-    conditions:
-      ref_name:
-        include:
-          - ~DEFAULT_BRANCH
-
-    rules:
-      - type: pull_request
-        parameters:
-          dismiss_stale_reviews_on_push: true
-          require_code_owner_review: false
-          require_last_push_approval: false
-          required_approving_review_count: 1
-          required_review_thread_resolution: false
+branches:
+  # `default` creates a branch protection rule to against the repo's base branch
+  - name: default
+    protection:
+      required_pull_request_reviews:
+        required_approving_review_count: 1
+        dismiss_stale_reviews: true
+        require_code_owner_reviews: false
+        require_last_push_approval: false
+        bypass_pull_request_allowances:
+          apps:
+            - renovate
+          users:
+          teams:
+        dismissal_restrictions:
+          users:
+          teams:
+      required_status_checks:
+      enforce_admins: true
+      restrictions:
