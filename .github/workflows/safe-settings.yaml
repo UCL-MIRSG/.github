@@ -29,6 +29,11 @@ jobs:
         run: npm install
         working-directory: ${{ env.SAFE_SETTINGS_CODE_DIR }}
 
+      - name: Debug
+        run: |-
+          echo "${{ github.workspace }}/safe-settings"
+          ls -la ${{ github.workspace }}/safe-settings
+
       - name: Run application
         run: npm run full-sync
         working-directory: ${{ env.SAFE_SETTINGS_CODE_DIR }}
