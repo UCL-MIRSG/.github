@@ -29,11 +29,6 @@ jobs:
         run: npm install
         working-directory: ${{ env.SAFE_SETTINGS_CODE_DIR }}
 
-      - name: Debug
-        run: |-
-          echo "${{ github.workspace }}/safe-settings"
-          ls -la ${{ github.workspace }}/safe-settings
-
       - name: Run application
         run: npm run full-sync
         working-directory: ${{ env.SAFE_SETTINGS_CODE_DIR }}
@@ -41,6 +36,7 @@ jobs:
           ADMIN_REPO: .github
           APP_ID: ${{ vars.SAFE_SETTINGS_APP_ID }}
           BLOCK_REPO_RENAME_BY_HUMAN: false
+          CONFIG_PATH: safe-settings
           DEPLOYMENT_CONFIG_FILE:
             ${{ github.workspace }}/safe-settings/deployment-settings.yaml
           ENABLE_PR_COMMENT: true
