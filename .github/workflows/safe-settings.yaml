@@ -27,11 +27,11 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-        working-directory: $SAFE_SETTINGS_CODE_DIR
+        working-directory: ${{ env.SAFE_SETTINGS_CODE_DIR }}
 
       - name: Run application
         run: npm run full-sync
-        working-directory: $SAFE_SETTINGS_CODE_DIR
+        working-directory: ${{ env.SAFE_SETTINGS_CODE_DIR }}
         env:
           ADMIN_REPO: .github
           APP_ID: ${{ vars.SAFE_SETTINGS_APP_ID }}
