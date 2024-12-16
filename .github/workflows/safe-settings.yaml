@@ -43,7 +43,7 @@ jobs:
           BLOCK_REPO_RENAME_BY_HUMAN: false
           CONFIG_PATH: ${{ github.workspace }}/safe-settings
           DEPLOYMENT_CONFIG_FILE:
-            ${{ github.workspace }}/safe-settings/deployment-settings.yaml
+            ${{ github.workspace }}/safe-settings/deployment-settings.yml
           ENABLE_PR_COMMENT: true
           GH_ORG: ${{ vars.SAFE_SETTINGS_GH_ORG }}
           GITHUB_CLIENT_ID: ${{ vars.SAFE_SETTINGS_GITHUB_CLIENT_ID }}
@@ -51,4 +51,4 @@ jobs:
             ${{ secrets.SAFE_SETTINGS_GITHUB_CLIENT_SECRET }}
           LOG_LEVEL: trace
           PRIVATE_KEY: ${{ secrets.SAFE_SETTINGS_PRIVATE_KEY }}
-          SETTINGS_FILE_PATH: settings.yaml
+          SETTINGS_FILE_PATH: settings.yml
