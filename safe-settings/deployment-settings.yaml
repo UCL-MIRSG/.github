@@ -36,10 +36,10 @@ deploymentConfig:
     - plugin: labels
       error: Some error
       script: return true;
-  restrictedRepos:
-    exclude:
-    include:
-      - "*"
+  # restrictedRepos:
+  #   exclude:
+  #   include:
+  #     - "*"
 
 env: []
 envFrom: []
