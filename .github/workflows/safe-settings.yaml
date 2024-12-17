@@ -14,43 +14,39 @@ jobs:
   safe-settings-sync:
     runs-on: ubuntu-latest
     env:
+      CONFIG_PATH: ${{ github.workspace }}/.config/safe-settings
       SAFE_SETTINGS_VERSION: 2.1.14
-      SAFE_SETTINGS_CODE_DIR: ${{ github.workspace }}/.safe-settings-code
     steps:
-      - name: Checkout source
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
-
       - name: Checkout GitHub Safe-Settings repository
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
         with:
-          path: ${{ env.SAFE_SETTINGS_CODE_DIR }}
           ref: ${{ env.SAFE_SETTINGS_VERSION }}
           repository: github/safe-settings
 
-      - run: ls -lah ${{ env.SAFE_SETTINGS_CODE_DIR }}
+      - name: Checkout source
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+        with:
+          path: ${{ github.workspace }}/.config
 
       - name: Setup Node.js
         uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4
         with:
-          cache-dependency-path:
-            ${{ env.SAFE_SETTINGS_CODE_DIR }}/package-lock.json
+          cache-dependency-path: package-lock.json
           cache: npm
-          node-version-file: ${{ env.SAFE_SETTINGS_CODE_DIR }}/.nvmrc
+          node-version-file: .nvmrc
 
       - name: Install dependencies
         run: npm install
-        working-directory: ${{ env.SAFE_SETTINGS_CODE_DIR }}
 
       - name: Run application
         run: npm run full-sync
-        working-directory: ${{ env.SAFE_SETTINGS_CODE_DIR }}
         env:
           ADMIN_REPO: .github
           APP_ID: ${{ vars.SAFE_SETTINGS_APP_ID }}
           BLOCK_REPO_RENAME_BY_HUMAN: false
-          CONFIG_PATH: safe-settings
+          CONFIG_PATH: ${{ env.CONFIG_PATH }}
           DEPLOYMENT_CONFIG_FILE:
-            ${{ github.workspace }}/safe-settings/deployment-settings.yaml
+            ${{ env.CONFIG_PATH }}/deployment-settings.yaml
           ENABLE_PR_COMMENT: true
           GH_ORG: ${{ vars.SAFE_SETTINGS_GH_ORG }}
           GITHUB_CLIENT_ID: ${{ vars.SAFE_SETTINGS_GITHUB_CLIENT_ID }}
