@@ -27,7 +27,7 @@ jobs:
           ref: ${{ env.SAFE_SETTINGS_VERSION }}
           repository: github/safe-settings
 
-      - run: ls ${{ env.SAFE_SETTINGS_CODE_DIR }}
+      - run: ls -lah ${{ env.SAFE_SETTINGS_CODE_DIR }}
 
       - name: Setup Node.js
         uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4
