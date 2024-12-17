@@ -37,8 +37,6 @@ deploymentConfig:
       error: Some error
       script: return true;
   restrictedRepos:
-    exclude:
-    include:
 
 env: []
 envFrom: []
