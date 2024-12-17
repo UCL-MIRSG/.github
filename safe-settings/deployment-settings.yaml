@@ -39,6 +39,7 @@ deploymentConfig:
   restrictedRepos:
     exclude:
     include:
+      - "*"
 
 env: []
 envFrom: []
