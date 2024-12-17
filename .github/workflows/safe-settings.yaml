@@ -14,39 +14,40 @@ jobs:
   safe-settings-sync:
     runs-on: ubuntu-latest
     env:
-      REPO_PATH: .config
       SAFE_SETTINGS_VERSION: 2.1.14
+      SAFE_SETTINGS_CODE_DIR: ${{ github.workspace }}/.safe-settings-code
     steps:
+      - name: Checkout source
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+
       - name: Checkout GitHub Safe-Settings repository
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
         with:
+          path: ${{ env.SAFE_SETTINGS_CODE_DIR }}
           ref: ${{ env.SAFE_SETTINGS_VERSION }}
           repository: github/safe-settings
-
-      - name: Checkout source
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
-        with:
-          path: ${{ env.REPO_PATH }}
 
       - name: Setup Node.js
         uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4
         with:
           cache-dependency-path: package-lock.json
           cache: npm
-          node-version-file: .nvmrc
+          node-version-file: .safe-settings-code/.nvmrc
 
       - name: Install dependencies
         run: npm install
+        working-directory: ${{ env.SAFE_SETTINGS_CODE_DIR }}
 
       - name: Run application
         run: npm run full-sync
+        working-directory: ${{ env.SAFE_SETTINGS_CODE_DIR }}
         env:
           ADMIN_REPO: .github
           APP_ID: ${{ vars.SAFE_SETTINGS_APP_ID }}
           BLOCK_REPO_RENAME_BY_HUMAN: false
-          CONFIG_PATH: .config
+          CONFIG_PATH: safe-settings
           DEPLOYMENT_CONFIG_FILE:
-            ${{ env.REPO_PATH }}/safe-settings/deployment-settings.yaml
+            ${{ github.workspace }}/safe-settings/deployment-settings.yaml
           ENABLE_PR_COMMENT: true
           GH_ORG: ${{ vars.SAFE_SETTINGS_GH_ORG }}
           GITHUB_CLIENT_ID: ${{ vars.SAFE_SETTINGS_GITHUB_CLIENT_ID }}
@@ -54,4 +55,4 @@ jobs:
             ${{ secrets.SAFE_SETTINGS_GITHUB_CLIENT_SECRET }}
           LOG_LEVEL: trace
           PRIVATE_KEY: ${{ secrets.SAFE_SETTINGS_PRIVATE_KEY }}
-          SETTINGS_FILE_PATH: safe-settings/settings.yaml
+          SETTINGS_FILE_PATH: settings.yaml
