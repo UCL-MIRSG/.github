@@ -1,6 +1,11 @@
 ---
 name: Safe Settings Sync
 on:
+  push:
+    branches:
+      - main
+      - renovate/**
+  pull_request:
   schedule:
     - cron: 0 */4 * * *
   workflow_dispatch: {}
