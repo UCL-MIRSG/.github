@@ -44,7 +44,7 @@ jobs:
           ADMIN_REPO: .github
           APP_ID: ${{ vars.SAFE_SETTINGS_APP_ID }}
           BLOCK_REPO_RENAME_BY_HUMAN: false
-          CONFIG_PATH: ${{ env.REPO_PATH }}/safe-settings
+          CONFIG_PATH: .config/safe-settings
           DEPLOYMENT_CONFIG_FILE:
             ${{ env.REPO_PATH }}/safe-settings/deployment-settings.yaml
           ENABLE_PR_COMMENT: true
