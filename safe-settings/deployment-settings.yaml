@@ -38,8 +38,8 @@ deploymentConfig:
       script: return true;
   restrictedRepos:
     exclude:
+      - -archive$
     include:
-      - "*"
 
 env: []
 envFrom: []
