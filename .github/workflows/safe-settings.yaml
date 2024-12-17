@@ -14,7 +14,7 @@ jobs:
   safe-settings-sync:
     runs-on: ubuntu-latest
     env:
-      CONFIG_PATH: ${{ github.workspace }}/.config/safe-settings
+      REPO_PATH: ${{ github.workspace }}/.config
       SAFE_SETTINGS_VERSION: 2.1.14
     steps:
       - name: Checkout GitHub Safe-Settings repository
@@ -26,7 +26,7 @@ jobs:
       - name: Checkout source
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
         with:
-          path: ${{ github.workspace }}/.config
+          path: ${{ env.REPO_PATH }}
 
       - name: Setup Node.js
         uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4
@@ -44,9 +44,9 @@ jobs:
           ADMIN_REPO: .github
           APP_ID: ${{ vars.SAFE_SETTINGS_APP_ID }}
           BLOCK_REPO_RENAME_BY_HUMAN: false
-          CONFIG_PATH: ${{ env.CONFIG_PATH }}
+          CONFIG_PATH: ${{ env.REPO_PATH }}/safe-settings
           DEPLOYMENT_CONFIG_FILE:
-            ${{ env.CONFIG_PATH }}/deployment-settings.yaml
+            ${{ env.REPO_PATH }}/safe-settings/deployment-settings.yaml
           ENABLE_PR_COMMENT: true
           GH_ORG: ${{ vars.SAFE_SETTINGS_GH_ORG }}
           GITHUB_CLIENT_ID: ${{ vars.SAFE_SETTINGS_GITHUB_CLIENT_ID }}
