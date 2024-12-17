@@ -39,7 +39,7 @@ deploymentConfig:
   restrictedRepos:
     exclude:
     include:
-      - "*"
+      - .github
 
 env: []
 envFrom: []
