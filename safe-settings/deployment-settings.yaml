@@ -1,14 +1,5 @@
 # https://github.com/github/safe-settings/blob/main-enterprise/docs/sample-settings/sample-deployment-settings.yml
 ---
-configvalidators:
-  - plugin: collaborators
-    error: "`Admin cannot be assigned to collaborators`"
-    script: >-
-      console.log(`baseConfig ${JSON.stringify(baseconfig)}`); return
-      baseconfig.permission != 'admin'
-
-overridevalidators:
-
 restrictedRepos:
   exclude:
     - AboutMeGateway
@@ -76,4 +67,3 @@ restrictedRepos:
     - xnat-helper
     - xnat-setup
     - XnatInstaller
-  include:
