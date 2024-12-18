@@ -1,5 +1,31 @@
 # https://github.com/github/safe-settings/blob/main-enterprise/docs/sample-settings/settings.yml
 ---
+autolinks:
+  - key_prefix: ARCMYS-
+    url_template: https://myservices-arc.uk.4me.com/requests/<num>
+    is_alphanumeric: false
+
+branches:
+  # `default` creates a branch protection rule to against the repo's base branch
+  - name: default
+    protection:
+      required_pull_request_reviews:
+        required_approving_review_count: 1
+        dismiss_stale_reviews: true
+        require_code_owner_reviews: false
+        require_last_push_approval: false
+        bypass_pull_request_allowances:
+          apps:
+            - renovate
+          users:
+          teams:
+        dismissal_restrictions:
+          users:
+          teams:
+      required_status_checks:
+      enforce_admins: true
+      restrictions:
+
 repository:
   allow_auto_merge: true
   allow_merge_commit: false
@@ -11,31 +37,6 @@ repository:
   squash_merge_commit_message: PR_BODY
   squash_merge_commit_title: PR_TITLE
 
-autolinks:
-  - key_prefix: ARCMYS-
-    url_template: https://myservices-arc.uk.4me.com/requests/<num>
-    is_alphanumeric: false
-
 teams:
   - name: mirsg
     permission: admin
-# branches:
-#   # `default` creates a branch protection rule to against the repo's base branch
-#   - name: default
-#     protection:
-#       required_pull_request_reviews:
-#         required_approving_review_count: 1
-#         dismiss_stale_reviews: true
-#         require_code_owner_reviews: false
-#         require_last_push_approval: false
-#         bypass_pull_request_allowances:
-#           apps:
-#             - renovate
-#           users:
-#           teams:
-#         dismissal_restrictions:
-#           users:
-#           teams:
-#       required_status_checks:
-#       enforce_admins: true
-#       restrictions:
