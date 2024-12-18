@@ -8,8 +8,8 @@ autolinks:
 branches:
   # `default` creates a branch protection rule to against the repo's base branch
   - name: default
-    enforce_admins: true
     protection:
+      enforce_admins: true
       required_pull_request_reviews:
         bypass_pull_request_allowances:
           apps:
@@ -21,8 +21,8 @@ branches:
         require_code_owner_reviews: false
         require_last_push_approval: false
         required_approving_review_count: 1
-    required_status_checks:
-    restrictions:
+      required_status_checks:
+      restrictions:
 
 repository:
   allow_auto_merge: true
