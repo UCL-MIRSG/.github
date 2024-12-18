@@ -14,8 +14,8 @@ branches:
         bypass_pull_request_allowances:
           apps:
             - renovate
-          users:
-          teams:
+          users: []
+          teams: []
         dismiss_stale_reviews: true
         dismissal_restrictions: {}
         require_code_owner_reviews: false
