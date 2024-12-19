@@ -44,21 +44,21 @@ rulesets:
           required_approving_review_count: 1
           required_review_thread_resolution: false
 
-  # - name: Status Checks
-  #   target: branch
-  #   enforcement: active
+  - name: Status Checks
+    target: branch
+    enforcement: active
 
-  #   conditions:
-  #     ref_name:
-  #       include:
-  #         - ~DEFAULT_BRANCH
-  #       exclude: []
+    conditions:
+      ref_name:
+        include:
+          - ~DEFAULT_BRANCH
+        exclude: []
 
-  #   rules:
-  #     - type: required_status_checks
-  #       parameters:
-  #         required_status_checks:
-  #           - context: links
-  #             integration_id: 15368
-  #           - context: linting
-  #             integration_id: 15368
+    rules:
+      - type: required_status_checks
+        parameters:
+          required_status_checks:
+            - context: links
+              integration_id: 15368
+            - context: linting
+              integration_id: 15368
