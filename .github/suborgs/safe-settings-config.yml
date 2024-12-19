@@ -1,0 +1,41 @@
+# https://github.com/github/safe-settings/blob/main-enterprise/docs/sample-settings/suborg.yml
+---
+suborgrepos:
+  - "*"
+
+rulesets:
+  - name: Default
+    target: branch
+    enforcement: active
+
+    conditions:
+      ref_name:
+        include:
+          - ~DEFAULT_BRANCH
+
+    rules:
+      - type: deletion
+      - type: non_fast_forward # prevents force pushes
+
+  - name: Pull Requests
+    target: branch
+    enforcement: active
+
+    bypass_actors:
+      - actor_id: 2740 # Renovate Bot
+        actor_type: Integration
+        bypass_mode: always
+
+    conditions:
+      ref_name:
+        include:
+          - ~DEFAULT_BRANCH
+
+    rules:
+      - type: pull_request
+        parameters:
+          dismiss_stale_reviews_on_push: true
+          require_code_owner_review: false
+          require_last_push_approval: false
+          required_approving_review_count: 1
+          required_review_thread_resolution: false
