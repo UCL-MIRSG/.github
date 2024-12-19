@@ -6,7 +6,7 @@ suborgrepos:
 rulesets:
   - name: Default
     target: branch
-    enforcement: disabled
+    enforcement: active
 
     conditions:
       ref_name:
@@ -20,7 +20,7 @@ rulesets:
 
   - name: Pull Requests
     target: branch
-    enforcement: disabled
+    enforcement: active
 
     bypass_actors:
       - actor_id: 2740 # Renovate Bot
@@ -46,7 +46,7 @@ rulesets:
 
   - name: Status Checks
     target: branch
-    enforcement: disabled
+    enforcement: active
 
     conditions:
       ref_name:
