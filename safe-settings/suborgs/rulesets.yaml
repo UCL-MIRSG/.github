@@ -59,6 +59,4 @@ rulesets:
         parameters:
           required_status_checks:
             - context: links
-              integration_id: 15368
             - context: linting
-              integration_id: 15368
