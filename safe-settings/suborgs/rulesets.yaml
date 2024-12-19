@@ -46,7 +46,7 @@ rulesets:
 
   - name: Status Checks
     target: branch
-    enforcement: active
+    enforcement: disabled
 
     conditions:
       ref_name:
@@ -57,6 +57,8 @@ rulesets:
     rules:
       - type: required_status_checks
         parameters:
+          do_not_enforce_on_create: false
           required_status_checks:
             - context: links
             - context: linting
+          strict_required_status_checks_policy: false
