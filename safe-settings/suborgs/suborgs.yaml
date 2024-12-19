@@ -12,6 +12,7 @@ rulesets:
       ref_name:
         include:
           - ~DEFAULT_BRANCH
+        exclude:
 
     rules:
       - type: deletion
@@ -30,6 +31,7 @@ rulesets:
       ref_name:
         include:
           - ~DEFAULT_BRANCH
+        exclude:
 
     rules:
       - type: pull_request
