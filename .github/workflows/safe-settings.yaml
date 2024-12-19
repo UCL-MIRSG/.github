@@ -61,4 +61,4 @@ jobs:
             ${{ secrets.SAFE_SETTINGS_GITHUB_CLIENT_SECRET }}
           LOG_LEVEL: trace
           PRIVATE_KEY: ${{ secrets.SAFE_SETTINGS_PRIVATE_KEY }}
-          SETTINGS_FILE_PATH: settings.yaml
+          SETTINGS_FILE_PATH: organisation.yaml
