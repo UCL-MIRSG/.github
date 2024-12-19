@@ -5,25 +5,6 @@ autolinks:
     url_template: https://myservices-arc.uk.4me.com/requests/<num>
     is_alphanumeric: false
 
-branches:
-  # `default` creates a branch protection rule to against the repo's base branch
-  - name: default
-    protection:
-      enforce_admins: true
-      required_pull_request_reviews:
-        bypass_pull_request_allowances:
-          apps:
-            - renovate
-          users: []
-          teams: []
-        dismiss_stale_reviews: true
-        dismissal_restrictions: {}
-        require_code_owner_reviews: false
-        require_last_push_approval: false
-        required_approving_review_count: 1
-      required_status_checks:
-      restrictions:
-
 repository:
   allow_auto_merge: true
   allow_merge_commit: false
