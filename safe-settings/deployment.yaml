@@ -3,7 +3,7 @@
 restrictedRepos:
   # these repos are all archived and will cause the GHA to fail
   exclude:
-    - ^AboutMeGateway$$
+    - ^AboutMeGateway$
     - ^admin$
     - ^ansible-collection-infrastructure-archive$
     - ^ansible-collection-omero$
