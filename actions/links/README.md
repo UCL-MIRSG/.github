@@ -10,7 +10,8 @@ jobs:
     steps:
       - uses: UCL-MIRSG/.github/actions/links@vx
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          app-id: ${{ secrets.LINK_APP_ID }}
+          app-pem: ${{ secrets.LINK_APP_PEM }}
 ```
 
 where `x` is the `major` version of the action. If custom link checking is
@@ -23,7 +24,8 @@ jobs:
     steps:
       - uses: UCL-MIRSG/.github/actions/linting@vx
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          app-id: ${{ secrets.LINK_APP_ID }}
+          app-pem: ${{ secrets.LINK_APP_PEM }}
           lychee-args:
             --base . --verbose --no-progress './**/*.md' './**/*.html'
             './**/*.rst'
