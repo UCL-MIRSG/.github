@@ -26,7 +26,7 @@ jobs:
         with:
           app-id: ${{ secrets.LINK_APP_ID }}
           app-pem: ${{ secrets.LINK_APP_PEM }}
-          lychee-args:
-            --base . --verbose --no-progress './**/*.md' './**/*.html'
-            './**/*.rst'
+          lychee-args: --cache --max-cache-age 1d --no-progress --verbose .
 ```
+
+where these `lychee-args` here represent the default of the composite action.
