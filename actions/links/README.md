@@ -9,6 +9,9 @@ jobs:
     timeout-minutes: 2
     steps:
       - uses: UCL-MIRSG/.github/actions/links@vx
+        with:
+          app-id: ${{ vars.LINKS_APP_ID }}
+          app-pem: ${{ secrets.LINKS_PRIVATE_KEY }}
 ```
 
 where `x` is the `major` version of the action. If custom link checking is
@@ -21,5 +24,7 @@ jobs:
     steps:
       - uses: UCL-MIRSG/.github/actions/linting@vx
         with:
+          app-id: ${{ vars.LINKS_APP_ID }}
+          app-pem: ${{ secrets.LINKS_PRIVATE_KEY }}
           lychee-args: --no-progress --verbose .
 ```
