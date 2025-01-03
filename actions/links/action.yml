@@ -15,7 +15,7 @@ inputs:
     description:
       Arguments to pass to lychee
       (https://github.com/lycheeverse/lychee#commandline-parameters)
-    default: --verbose --no-progress .
+    default: --debug --no-progress --verbose .
 
 runs:
   using: composite
@@ -36,4 +36,4 @@ runs:
         args: ${{ inputs.lychee-args }}
         failIfEmpty: false
       env:
-        GITHUB_TOKEN: x-access-token:${{ steps.generate-token.outputs.token }}
+        GITHUB_TOKEN: ${{ steps.generate-token.outputs.token }}
