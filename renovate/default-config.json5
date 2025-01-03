@@ -8,7 +8,13 @@
   gradle: {
     enabled: false,
   },
+  "gradle-wrapper": {
+    enabled: false,
+  },
   maven: {
+    enabled: false,
+  },
+  "maven-wrapper": {
     enabled: false,
   },
 }
