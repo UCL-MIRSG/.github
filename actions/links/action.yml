@@ -36,4 +36,4 @@ runs:
         args: ${{ inputs.lychee-args }}
         failIfEmpty: false
       env:
-        GITHUB_TOKEN: ${{ steps.generate-token.outputs.token }}
+        GITHUB_TOKEN: x-access-token:${{ steps.generate-token.outputs.token }}
