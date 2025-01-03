@@ -26,7 +26,5 @@ jobs:
         with:
           app-id: ${{ secrets.LINK_APP_ID }}
           app-pem: ${{ secrets.LINK_APP_PEM }}
-          lychee-args:
-            --base . --verbose --no-progress './**/*.md' './**/*.html'
-            './**/*.rst'
+          lychee-args: --debug --no-progress --verbose .
 ```
