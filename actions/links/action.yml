@@ -3,14 +3,6 @@ name: Links
 description: Checks the links in a repo work
 
 inputs:
-  app-id:
-    description: Application ID
-    required: true
-
-  app-pem:
-    description: Application private key
-    required: true
-
   lychee-args:
     description:
       Arguments to pass to lychee
@@ -27,9 +19,9 @@ runs:
       id: generate-token
       uses: actions/create-github-app-token@c1a285145b9d317df6ced56c09f525b5c2b6f755 # v1
       with:
-        app-id: ${{ inputs.app-id }}
+        app-id: ${{ secrets.LINKS_APP_ID }}
         owner: ${{ github.repository_owner }}
-        private-key: ${{ inputs.app-pem }}
+        private-key: ${{ secrets.LINKS_APP_PEM }}
 
     - name: Check links
       uses: lycheeverse/lychee-action@f796c8b7d468feb9b8c0a46da3fac0af6874d374 # v2
