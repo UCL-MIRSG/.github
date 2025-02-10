@@ -35,6 +35,7 @@ restrictedRepos:
     - ^flimj-ui$
     - ^flimlib$
     - ^general_bulk_uploader$
+    - ^genfi2-modules$
     - ^gif_extras$
     - ^github-actions-maven$
     - ^Infrastructure$
