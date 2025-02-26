@@ -27,7 +27,7 @@
       matchDepNames: ["org.apache.tomcat:tomcat"],
     },
     {
-      description: "Update XNAT and associated plugins simultaneously delayed",
+      description: "Update XNAT and associated plugins simultaneously",
       groupName: "xnat",
       matchDepNames: [
         "icrimaginginformatics/ohif-viewer-xnat-plugin",
