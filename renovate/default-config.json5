@@ -27,26 +27,6 @@
       matchDepNames: ["org.apache.tomcat:tomcat"],
     },
     {
-      description: "Update XNAT and associated plugins simultaneously immediately",
-      groupName: "xnat",
-      matchDepNames: [
-        "icrimaginginformatics/ohif-viewer-xnat-plugin",
-        "NrgXnat/xnat-pipeline-engine",
-        "VUIIS/dax",
-        "xnatdev/container-service",
-        "xnatdev/xnat-image-viewer-plugin",
-        "xnatdev/xnat-web",
-        "xnatdev/xsync",
-        "xnatx/datasets-plugin",
-        "xnatx/ldap-auth-plugin",
-        "xnatx/ml-plugin",
-        "xnatx/xnatx-batch-launch-plugin",
-        "xnatx/xnatx-dxm-settings-plugin",
-      ],
-      matchUpdateTypes: ["patch"],
-      versioning: "loose",
-    },
-    {
       description: "Update XNAT and associated plugins simultaneously delayed",
       groupName: "xnat",
       matchDepNames: [
@@ -64,8 +44,7 @@
         "xnatx/xnatx-dxm-settings-plugin",
       ],
       versioning: "loose",
-      matchUpdateTypes: ["major", "minor"],
-      minimumReleaseAge: "90 days",
+      minimumReleaseAge: "7 days",
     },
   ],
 }
