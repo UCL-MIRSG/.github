@@ -55,14 +55,14 @@ repos:
         args:
           - --ignore=DL3008
   - repo: https://github.com/ansible-community/ansible-lint.git
-    rev: v24.10.0
+    rev: v24.12.2
     hooks:
       - id: ansible-lint
         args:
           - --exclude=.github
           - --exclude=docker-compose.yml
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.8.1
+    rev: v0.8.4
     hooks:
       - id: ruff
         args:
@@ -70,7 +70,7 @@ repos:
           - --fix
       - id: ruff-format
   - repo: https://github.com/crate-ci/typos
-    rev: v1.28.1
+    rev: v1.29.0
     hooks:
       - id: typos
         args:
@@ -89,6 +89,7 @@ repos:
     rev: v1.5.5
     hooks:
       - id: forbid-tabs
+        exclude: .tsv$
   - repo: https://github.com/pappasam/toml-sort
     rev: v0.24.2
     hooks:
@@ -132,6 +133,6 @@ repos:
           - --external-sources
           - --shell=bash
   - repo: https://github.com/rhysd/actionlint
-    rev: v1.7.4
+    rev: v1.7.5
     hooks:
       - id: actionlint

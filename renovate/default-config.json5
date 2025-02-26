@@ -3,6 +3,7 @@
   extends: [
     "github>UCL-ARC/.github//renovate/default-config.json",
     ":assignAndReview(team:mirsg)",
+    "group:allDigest",
     "group:allNonMajor",
   ],
   gradle: {

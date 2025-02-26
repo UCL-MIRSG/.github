@@ -3,15 +3,19 @@ name: Links
 description: Checks the links in a repo work
 
 inputs:
-  github-token:
-    description: GitHub token
+  app-id:
+    description: Application ID
+    required: true
+
+  app-pem:
+    description: Application private key
     required: true
 
   lychee-args:
     description:
       Arguments to pass to lychee
       (https://github.com/lycheeverse/lychee#commandline-parameters)
-    default: --verbose --no-progress .
+    default: --no-progress --verbose .
 
 runs:
   using: composite
@@ -19,9 +23,17 @@ runs:
     - name: Checkout source
       uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
 
+    - name: Generate token
+      id: generate-token
+      uses: actions/create-github-app-token@c1a285145b9d317df6ced56c09f525b5c2b6f755 # v1
+      with:
+        app-id: ${{ inputs.app-id }}
+        owner: ${{ github.repository_owner }}
+        private-key: ${{ inputs.app-pem }}
+
     - name: Check links
-      uses: lycheeverse/lychee-action@f81112d0d2814ded911bd23e3beaa9dda9093915 # v2
+      uses: lycheeverse/lychee-action@f796c8b7d468feb9b8c0a46da3fac0af6874d374 # v2
       with:
         args: ${{ inputs.lychee-args }}
         failIfEmpty: false
-        token: ${{ inputs.github-token }}
+        token: ${{ steps.generate-token.outputs.token }}
