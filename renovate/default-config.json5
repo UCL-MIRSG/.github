@@ -12,4 +12,38 @@
   maven: {
     enabled: false,
   },
+  customDatasources: {
+    "VUIIS-dax": {
+      defaultRegistryUrlTemplate: "https://api.github.com/repos/VUIIS/dax/contents/misc/xnat-plugins",
+      transformTemplates: [
+        '{"releases": $.{"version": $match(name, /(\\d+\\.)?(\\d+\\.)?(\\*|\\d+)/ ).match }}',
+      ],
+    },
+  },
+  packageRules: [
+    {
+      description: "Check Maven Central for updates to Tomcat 9",
+      allowedVersions: "<10",
+      matchPackageNames: ["org.apache.tomcat:tomcat"],
+    },
+    {
+      description: "Update XNAT and associated plugins simultaneously",
+      groupName: "xnat",
+      matchPackageNames: [
+        "icrimaginginformatics/ohif-viewer-xnat-plugin",
+        "NrgXnat/xnat-pipeline-engine",
+        "VUIIS/dax",
+        "xnatdev/container-service",
+        "xnatdev/xnat-image-viewer-plugin",
+        "xnatdev/xnat-web",
+        "xnatdev/xsync",
+        "xnatx/datasets-plugin",
+        "xnatx/ldap-auth-plugin",
+        "xnatx/ml-plugin",
+        "xnatx/xnatx-batch-launch-plugin",
+        "xnatx/xnatx-dxm-settings-plugin",
+      ],
+      versioning: "loose",
+    },
+  ],
 }
