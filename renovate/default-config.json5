@@ -24,12 +24,12 @@
     {
       description: "Check Maven Central for updates to Tomcat 9",
       allowedVersions: "<10",
-      matchPackageNames: ["org.apache.tomcat:tomcat"],
+      matchDepNames: ["org.apache.tomcat:tomcat"],
     },
     {
       description: "Update XNAT and associated plugins simultaneously",
       groupName: "xnat",
-      matchPackageNames: [
+      matchDepNames: [
         "icrimaginginformatics/ohif-viewer-xnat-plugin",
         "NrgXnat/xnat-pipeline-engine",
         "VUIIS/dax",
@@ -44,6 +44,7 @@
         "xnatx/xnatx-dxm-settings-plugin",
       ],
       versioning: "loose",
+      minimumReleaseAge: "7 days",
     },
   ],
 }
