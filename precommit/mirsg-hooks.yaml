@@ -62,7 +62,7 @@ repos:
           - --exclude=.github
           - --exclude=docker-compose.yml
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.8.4
+    rev: v0.9.9
     hooks:
       - id: ruff
         args:
@@ -70,14 +70,14 @@ repos:
           - --fix
       - id: ruff-format
   - repo: https://github.com/crate-ci/typos
-    rev: v1.29.0
+    rev: v1.30.0
     hooks:
       - id: typos
         args:
           - --force-exclude
           - --hidden
   - repo: https://github.com/igorshubovych/markdownlint-cli
-    rev: v0.43.0
+    rev: v0.44.0
     hooks:
       - id: markdownlint
         args:
@@ -122,7 +122,7 @@ repos:
           - --fix=lf
       - id: trailing-whitespace
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: 0.30.0
+    rev: 0.31.2
     hooks:
       - id: check-github-workflows
   - repo: https://github.com/shellcheck-py/shellcheck-py
@@ -133,6 +133,6 @@ repos:
           - --external-sources
           - --shell=bash
   - repo: https://github.com/rhysd/actionlint
-    rev: v1.7.5
+    rev: v1.7.7
     hooks:
       - id: actionlint
