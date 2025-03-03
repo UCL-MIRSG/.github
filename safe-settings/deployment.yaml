@@ -23,6 +23,7 @@ restrictedRepos:
     - ^ansible-role-tomcat$
     - ^catch-srv-plugin$
     - ^chenies-mews-cleanup$
+    - ^CmicGateway$
     - ^cmic-xnat-plugin$
     - ^comic100_dax_config$
     - ^despiad_customizations$
