@@ -1,9 +1,6 @@
 {
   $schema: "https://docs.renovatebot.com/renovate-schema.json",
-  extends: [
-    "github>UCL-MIRSG/.github//renovate/default-config.json5",
-    ":automergeAll",
-  ],
+  extends: ["github>UCL-MIRSG/.github//renovate/default-config.json5"],
   "pre-commit": {
     fileMatch: ["precommit/mirsg-hooks.yaml"],
   },
