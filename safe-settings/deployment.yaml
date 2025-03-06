@@ -67,6 +67,7 @@ restrictedRepos:
     - ^xnat-1946$
     - ^xnat-azure-template-terraform$
     - ^xnat-azure-terraform$
+    - ^xnat-condenser-demo$
     - ^XNAT-FTD$
     - ^xnat-helper$
     - ^xnat-setup$
