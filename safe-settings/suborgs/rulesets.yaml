@@ -48,6 +48,11 @@ rulesets:
     target: branch
     enforcement: active
 
+    bypass_actors:
+      - actor_id: 5 # repository admin
+        actor_type: RepositoryRole
+        bypass_mode: pull_request
+
     conditions:
       ref_name:
         include:
