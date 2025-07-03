@@ -12,6 +12,13 @@
   maven: {
     enabled: false,
   },
+  hostRules: [
+    {
+      // Fixes issue with custom datasource for VUIIS/dax
+      matchHost: "api.github.com",
+      token: "{{ secrets.GITHUB_TOKEN }}",
+    },
+  ],
   customDatasources: {
     "VUIIS-dax": {
       defaultRegistryUrlTemplate: "https://api.github.com/repos/VUIIS/dax/contents/misc/xnat-plugins",
