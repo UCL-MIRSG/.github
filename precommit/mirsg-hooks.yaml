@@ -48,6 +48,15 @@ repos:
                 }
               }
             }
+  - repo: https://github.com/antonbabenko/pre-commit-terraform
+    rev: v1.99.4
+    hooks:
+      - id: terraform_fmt
+        args:
+          - --args=-diff
+      - id: terraform_validate
+        args:
+          - --tf-init-args=-upgrade
   - repo: https://github.com/AleksaC/hadolint-py
     rev: v2.12.1b3
     hooks:
