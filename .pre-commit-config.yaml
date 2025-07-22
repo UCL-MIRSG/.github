@@ -1,11 +1,11 @@
 ---
 repos:
   - repo: https://github.com/UCL-MIRSG/.github
-    rev: v0.213.0
+    rev: v0.214.0
     hooks:
       - id: mirsg-hooks
   - repo: https://github.com/renovatebot/pre-commit-hooks
-    rev: 40.8.0
+    rev: 41.42.2
     hooks:
       - id: renovate-config-validator
         args:
