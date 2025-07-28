@@ -12,9 +12,6 @@
   maven: {
     enabled: false,
   },
-  terraform: {
-    enabled: false,
-  },
   customDatasources: {
     "VUIIS-dax": {
       defaultRegistryUrlTemplate: "https://api.github.com/repos/VUIIS/dax/contents/misc/xnat-plugins",
