@@ -13,7 +13,7 @@ repos:
 
 Then run `pre-commit install; pre-commit autoupdate`.
 
-If a repository is experiencing spellchecking problems causes by
+If a repository is experiencing spellchecking problems caused by
 [typos](https://github.com/crate-ci/typos) then one can create a `.typos.toml`
 file and fill it with the following:
 
