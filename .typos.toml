@@ -1,2 +1,7 @@
-[type.yaml]
-extend-words.promis = "promis"
+[default]
+extend-ignore-re = [
+    # Custom ignore regex patterns:
+    # https://github.com/crate-ci/typos/blob/master/docs/reference.md#example-configurations
+    ".*(?:#|--|//|/*).*(?:typos):\\s?ignore[^\\n]*\\n",
+    ".*(?:typos):\\s?ignore-next-line[^\\n]*\\n[^\\n]*",
+]
