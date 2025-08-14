@@ -57,6 +57,9 @@ runs:
       run: ansible-galaxy install -r ${{ inputs.ansible-roles-config }} --force
       if: inputs.ansible-roles-config != 'missing'
 
+    - name: Set up terraform
+      uses: hashicorp/setup-terraform@b9cd54a3c349d3f38e8881555d616ced269862dd # v3
+
     - name: Run pre-commit
       shell: bash
       run: pre-commit run --all-files --color always --verbose
