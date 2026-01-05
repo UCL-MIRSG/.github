@@ -1,6 +1,6 @@
 ---
 name: Linting
-description: Runs pre-commit over the repo
+description: Runs prek over the repo
 
 inputs:
   ansible-roles-config:
@@ -17,12 +17,12 @@ runs:
     - name: Checkout source
       uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
 
-    - name: Cache ansible & pre-commit
+    - name: Cache ansible & prek
       uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
       with:
         path: |-
           ~/.ansible
-          ~/.cache/pre-commit
+          ~/.cache/prek
         # yamllint disable-line rule:quoted-strings
         key: "\
           cache-\
@@ -31,10 +31,10 @@ runs:
           "
       if: inputs.ansible-roles-config != 'missing'
 
-    - name: Cache pre-commit
+    - name: Cache prek
       uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
       with:
-        path: ~/.cache/pre-commit
+        path: ~/.cache/prek
         key: cache-${{ hashFiles(inputs.pre-commit-config) }}
       if: inputs.ansible-roles-config == 'missing'
 
@@ -49,9 +49,9 @@ runs:
       run: uv pip install ansible
       if: inputs.ansible-roles-config != 'missing'
 
-    - name: Install pre-commit
+    - name: Install prek
       shell: bash
-      run: uv pip install pre-commit
+      run: uv pip install prek
 
     - name: Install ansible roles
       shell: bash
@@ -63,9 +63,6 @@ runs:
     - name: Set up terraform
       uses: hashicorp/setup-terraform@b9cd54a3c349d3f38e8881555d616ced269862dd # v3
 
-    - name: Run pre-commit
+    - name: Run prek
       shell: bash
-      run: uv run pre-commit run --all-files --color always --verbose
-
-    - uses: pre-commit-ci/lite-action@5d6cc0eb514c891a40562a58a8e71576c5c7fb43 # v1.1.0
-      if: ${{ !cancelled() }}
+      run: uv run prek run --all-files --color always --verbose

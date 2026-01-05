@@ -10,7 +10,7 @@ def main() -> int:
     cfg = HERE.parent / "mirsg-hooks.yaml"
     result = subprocess.run(
         [
-            "pre-commit",
+            "prek",
             "run",
             "--config",
             f"{cfg}",

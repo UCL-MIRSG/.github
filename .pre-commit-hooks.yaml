@@ -1,8 +1,8 @@
 ---
 - id: mirsg-hooks
   name: MIRSG hooks
-  description: Default pre-commit hooks for MIRSG repos
-  entry: ./precommit/run-mirsg-hooks.py
+  description: Default prek hooks for MIRSG repos
+  entry: ./prek/run-mirsg-hooks.py
   language: script
   require_serial: true
   verbose: true
