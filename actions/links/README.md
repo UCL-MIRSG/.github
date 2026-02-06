@@ -5,7 +5,7 @@ This action can be used in the following manner:
 ```yaml
 jobs:
   links:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     timeout-minutes: 2
     steps:
       - uses: UCL-MIRSG/.github/actions/links@vx
@@ -20,7 +20,7 @@ required, one can add custom inputs through `lychee-args`, i.e.:
 ```yaml
 jobs:
   linting:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     steps:
       - uses: UCL-MIRSG/.github/actions/linting@vx
         with:
