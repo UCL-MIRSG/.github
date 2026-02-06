@@ -5,7 +5,7 @@ This action can be used in the following manner:
 ```yaml
 jobs:
   linting:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     steps:
       - uses: UCL-MIRSG/.github/actions/linting@vx
         with:
@@ -18,7 +18,7 @@ where `x` is the `major` version of the action. If the linting also requires
 ```yaml
 jobs:
   linting:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     steps:
       - uses: UCL-MIRSG/.github/actions/linting@vx
         with:
