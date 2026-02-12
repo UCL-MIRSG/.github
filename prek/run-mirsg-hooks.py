@@ -1,19 +1,25 @@
 #!/usr/bin/env python
 import pathlib
 import subprocess
+import sys
 
 HERE = pathlib.Path(__file__).resolve()
 
 
 def main() -> int:
-    cmd = [
-        "prek",
-        "run",
-        "--config",
-        str(HERE.parent / "mirsg-hooks.yaml"),
-        "--all-files",
-    ]
-    return subprocess.run(cmd, check=False).returncode
+    cfg = HERE.parent / "mirsg-hooks.yaml"
+    result = subprocess.run(
+        [
+            "prek",
+            "run",
+            "--config",
+            f"{cfg}",
+            "--files",
+        ]
+        + sys.argv[1:],
+        check=False,
+    )
+    return result.returncode
 
 
 if __name__ == "__main__":
