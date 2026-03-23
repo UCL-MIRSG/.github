@@ -149,7 +149,3 @@ repos:
     rev: v1.7.10
     hooks:
       - id: actionlint
-  - repo: https://github.com/astral-sh/uv-pre-commit
-    rev: 0.9.28
-    hooks:
-      - id: uv-lock
