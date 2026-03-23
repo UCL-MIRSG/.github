@@ -1,0 +1,38 @@
+---
+name: Update Terraform Lock File
+description: Update terraform lock file to include hashes for all platforms
+
+runs:
+  using: composite
+  steps:
+    - name: Generate token
+      id: generate-token
+      uses: actions/create-github-app-token@29824e69f54612133e76f7eaac726eef6c875baf # v2
+      with:
+        app-id: ${{ vars.TERRAFORM_LOCK_UPDATE_APP_ID }}
+        private-key: ${{ secrets.TERRAFORM_LOCK_UPDATE_APP_PRIVATE_KEY }}
+
+    - name: Checkout source
+      uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+      with:
+        ref: ${{ github.head_ref }}
+        token: ${{ steps.generate-token.outputs.token }}
+
+    - name: Setup terraform
+      uses: hashicorp/setup-terraform@5e8dbf3c6d9deaf4193ca7a8fb23f2ac83bb6c85 # v4
+
+    - name: Update lock file for all platforms
+      shell: bash
+      run: |-
+        find . -name ".terraform.lock.hcl" | while read lockfile; do
+          dir=$(dirname "$lockfile")
+          echo "Locking providers in $dir"
+          terraform -chdir="$dir" providers lock \
+            -platform=darwin_amd64 \
+            -platform=linux_amd64
+        done
+
+    - name: Commit updated lock files
+      uses: stefanzweifel/git-auto-commit-action@04702edda442b2e678b25b537cec683a1493fcb9 # v7
+      with:
+        commit_message: update terraform lock file for all platforms
