@@ -2,6 +2,15 @@
 name: Update Terraform Lock File
 description: Update terraform lock file to include hashes for all platforms
 
+inputs:
+  app-id:
+    description: Application ID
+    required: true
+
+  app-pem:
+    description: Application private key
+    required: true
+
 runs:
   using: composite
   steps:
@@ -9,8 +18,8 @@ runs:
       id: generate-token
       uses: actions/create-github-app-token@29824e69f54612133e76f7eaac726eef6c875baf # v2
       with:
-        app-id: ${{ vars.TERRAFORM_LOCK_UPDATE_APP_ID }}
-        private-key: ${{ secrets.TERRAFORM_LOCK_UPDATE_APP_PRIVATE_KEY }}
+        app-id: ${{ inputs.app-id }}
+        private-key: ${{ inputs.app-pem }}
 
     - name: Checkout source
       uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4

@@ -8,6 +8,9 @@ jobs:
     runs-on: ubuntu-slim
     steps:
       - uses: UCL-MIRSG/.github/actions/terraform-update@vx
+        with:
+          app-id: ${{ vars.APP_ID }}
+          app-pem: ${{ secrets.APP_PEM }}
 ```
 
 where `x` is the `major` version of the action.
