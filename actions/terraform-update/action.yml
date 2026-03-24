@@ -45,3 +45,4 @@ runs:
       uses: stefanzweifel/git-auto-commit-action@04702edda442b2e678b25b537cec683a1493fcb9 # v7
       with:
         commit_message: update terraform lock file for both platforms
+        file_pattern: "**/.terraform.lock.hcl"
