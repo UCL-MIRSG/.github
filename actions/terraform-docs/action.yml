@@ -2,6 +2,19 @@
 name: Generate Terraform Documentation
 description: Generate terraform documentation and push changes back to PR
 
+inputs:
+  app-id:
+    description: Application ID
+    required: true
+
+  app-pem:
+    description: Application private key
+    required: true
+
+  working-dir:
+    description: Directory containing terraform files
+    required: true
+
 runs:
   using: composite
   steps:
@@ -9,18 +22,18 @@ runs:
       id: generate-token
       uses: actions/create-github-app-token@29824e69f54612133e76f7eaac726eef6c875baf # v2
       with:
-        app-id: ${{ vars.TERRAFORM_DOCS_APP_ID }}
-        private-key: ${{ secrets.TERRAFORM_DOCS_APP_PRIVATE_KEY }}
+        app-id: ${{ inputs.app-id }}
+        private-key: ${{ inputs.app-pem }}
 
     - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
       with:
-        ref: ${{ github.event.pull_request.head.ref }}
+        ref: ${{ github.head_ref }}
         token: ${{ steps.generate-token.outputs.token }}
 
     - name: Render terraform docs and push changes back to PR
-      uses: terraform-docs/gh-actions@main
+      uses: terraform-docs/gh-actions@6de6da0cefcc6b4b7a5cbea4d79d97060733093c # v1
       with:
-        working-dir: ./provision
+        working-dir: ${{ inputs.working-dir }}
         output-file: README.md
         output-method: inject
         git-push: true
