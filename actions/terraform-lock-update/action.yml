@@ -35,6 +35,8 @@ runs:
       run: |-
         find . -name ".terraform.lock.hcl" -print0 | while IFS= read -r -d '' lockfile; do
           dir=$(dirname "$lockfile")
+          echo "Initialising $dir"
+          terraform -chdir="$dir" init -backend=false
           echo "Locking providers in $dir"
           terraform -chdir="$dir" providers lock \
             -platform=darwin_amd64 \
