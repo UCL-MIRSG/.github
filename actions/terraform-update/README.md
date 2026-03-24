@@ -9,8 +9,8 @@ jobs:
     steps:
       - uses: UCL-MIRSG/.github/actions/terraform-update@vx
         with:
-          app-id: ${{ vars.APP_ID }}
-          app-pem: ${{ secrets.APP_PEM }}
+          app-id: ${{ vars.TERRAFORM_LOCK_UPDATE_APP_ID }}
+          app-pem: ${{ secrets.TERRAFORM_LOCK_UPDATE_APP_PRIVATE_KEY }}
 ```
 
 where `x` is the `major` version of the action.
