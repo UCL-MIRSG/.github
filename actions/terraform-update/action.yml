@@ -33,7 +33,7 @@ runs:
     - name: Update lock file for all platforms
       shell: bash
       run: |-
-        find . -name ".terraform.lock.hcl" | while read lockfile; do
+        find . -name ".terraform.lock.hcl" -print0 | while IFS= read -r -d '' lockfile; do
           dir=$(dirname "$lockfile")
           echo "Locking providers in $dir"
           terraform -chdir="$dir" providers lock \
