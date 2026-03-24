@@ -11,9 +11,13 @@ inputs:
     description: Application private key
     required: true
 
+  find-dir:
+    description: Root directory to extract list of directories
+    default: disabled
+
   working-dir:
-    description: Directory containing terraform files
-    required: true
+    description: Directories to generate docs for
+    default: .
 
 runs:
   using: composite
@@ -33,7 +37,8 @@ runs:
     - name: Render terraform docs and push changes back to PR
       uses: terraform-docs/gh-actions@6de6da0cefcc6b4b7a5cbea4d79d97060733093c # v1
       with:
-        working-dir: ${{ inputs.working-dir }}
+        find-dir: ${{ inputs.find-dir }}
+        git-push: true
         output-file: README.md
         output-method: inject
-        git-push: true
+        working-dir: ${{ inputs.working-dir }}
