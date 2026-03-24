@@ -1,10 +1,10 @@
-# Terraform Update
+# terraform-update
 
 This action can be used in the following manner:
 
 ```yaml
 jobs:
-  linting:
+  terraform-update:
     runs-on: ubuntu-slim
     steps:
       - uses: UCL-MIRSG/.github/actions/terraform-update@vx
