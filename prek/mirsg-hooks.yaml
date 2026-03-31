@@ -149,10 +149,6 @@ repos:
     rev: v1.7.10
     hooks:
       - id: actionlint
-  - repo: https://github.com/astral-sh/uv-pre-commit
-    rev: 0.9.28
-    hooks:
-      - id: uv-lock
   - repo: https://github.com/zizmorcore/zizmor-pre-commit
     rev: v1.23.1
     hooks:
