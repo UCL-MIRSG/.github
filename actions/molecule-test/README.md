@@ -5,6 +5,8 @@ This action can be used in the following manner:
 ```yaml
 jobs:
   molecule:
+    permissions:
+      contents: read
     runs-on: ubuntu-latest
     steps:
       - uses: UCL-MIRSG/.github/actions/molecule-test@vx
@@ -18,6 +20,8 @@ like to specify a different scenario, you can do so with the `scenario` input:
 ```yaml
 jobs:
   molecule:
+    permissions:
+      contents: read
     runs-on: ubuntu-latest
     strategy:
       fail-fast: true
@@ -42,6 +46,8 @@ To use this action to test your Collection, you will need to specify a
 ```yaml
 jobs:
   molecule:
+    permissions:
+      contents: read
     runs-on: ubuntu-latest
     steps:
       - uses: UCL-MIRSG/.github/actions/molecule-test@vx
