@@ -56,7 +56,7 @@ repos:
           - --args=-diff
       - id: terraform_validate
         args:
-          - --tf-init-args=-upgrade
+          - --tf-init-args=-lockfile=readonly
   - repo: https://github.com/AleksaC/hadolint-py
     rev: v2.14.0
     hooks:
