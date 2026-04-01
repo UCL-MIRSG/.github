@@ -21,12 +21,12 @@ required, one can add custom inputs through `lychee-args`, i.e.:
 
 ```yaml
 jobs:
-  linting:
+  links:
     permissions:
       contents: read
     runs-on: ubuntu-slim
     steps:
-      - uses: UCL-MIRSG/.github/actions/linting@vx
+      - uses: UCL-MIRSG/.github/actions/links@vx
         with:
           app-id: ${{ vars.LINKS_APP_ID }}
           app-pem: ${{ secrets.LINKS_PRIVATE_KEY }} # zizmor: ignore[secrets-outside-env]
