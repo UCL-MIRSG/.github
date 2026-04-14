@@ -8,8 +8,7 @@ on:
 
 jobs:
   add-issue-to-project:
-    permissions:
-      contents: read
+    permissions: {}
     runs-on: ubuntu-slim
     steps:
       - name: Checkout source
