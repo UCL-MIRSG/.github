@@ -20,7 +20,7 @@ runs:
         persist-credentials: false
 
     - name: Cache ansible & prek
-      uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
+      uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5
       with:
         path: |-
           ~/.ansible
@@ -34,7 +34,7 @@ runs:
       if: inputs.ansible-roles-config != 'missing'
 
     - name: Cache prek
-      uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
+      uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5
       with:
         path: ~/.cache/prek
         key: cache-${{ hashFiles(inputs.pre-commit-config) }}
