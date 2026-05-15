@@ -6,8 +6,7 @@ This action can be used in the following manner to add issues to the
 ```yaml
 jobs:
   add-issue-to-project:
-    permissions:
-      contents: read
+    permissions: {}
     runs-on: ubuntu-slim
     steps:
       - uses: UCL-MIRSG/.github/actions/add-to-project@vx
@@ -23,8 +22,7 @@ to:
 ```yaml
 jobs:
   add-issue-to-project:
-    permissions:
-      contents: read
+    permissions: {}
     runs-on: ubuntu-slim
     steps:
       - uses: UCL-MIRSG/.github/actions/add-to-project@vx
