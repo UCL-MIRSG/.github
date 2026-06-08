@@ -20,13 +20,13 @@ runs:
   steps:
     - name: Generate token
       id: generate-token
-      uses: actions/create-github-app-token@fee1f7d63c2ff003460e3d139729b119787bc349 # v2
+      uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
       with:
         app-id: ${{ inputs.app-id }}
         private-key: ${{ inputs.app-pem }}
 
     - name: Get project data
-      uses: actions/add-to-project@244f685bbc3b7adfa8466e08b698b5577571133e # v1.0.2
+      uses: actions/add-to-project@5afcf98fcd03f1c2f92c3c83f58ae24323cc57fd # v2.0.0
       with:
         project-url: ${{ inputs.project-url }}
         github-token: ${{ steps.generate-token.outputs.token }}
