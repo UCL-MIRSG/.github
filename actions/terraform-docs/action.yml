@@ -33,6 +33,7 @@ runs:
       with:
         persist-credentials: true
         ref: ${{ github.head_ref || github.ref_name }}
+        repository: ${{ github.repository }}
         token: ${{ steps.generate-token.outputs.token }}
 
     - name: Render terraform docs and push changes back to PR
