@@ -24,19 +24,20 @@ runs:
   steps:
     - name: Generate token
       id: generate-token
-      uses: actions/create-github-app-token@fee1f7d63c2ff003460e3d139729b119787bc349 # v2
+      uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
       with:
         app-id: ${{ inputs.app-id }}
         private-key: ${{ inputs.app-pem }}
 
-    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+    - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
       with:
         persist-credentials: true
         ref: ${{ github.head_ref || github.ref_name }}
+        repository: ${{ github.repository }}
         token: ${{ steps.generate-token.outputs.token }}
 
     - name: Render terraform docs and push changes back to PR
-      uses: terraform-docs/gh-actions@6de6da0cefcc6b4b7a5cbea4d79d97060733093c # v1
+      uses: terraform-docs/gh-actions@6de6da0cefcc6b4b7a5cbea4d79d97060733093c # v1.4.1
       with:
         find-dir: ${{ inputs.find-dir }}
         git-push: true

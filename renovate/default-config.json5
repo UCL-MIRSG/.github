@@ -58,5 +58,17 @@
       versioning: "loose",
       enabled: false,
     },
+    {
+      description: "Disable minimum release age checks for own GitHub Actions",
+      matchManagers: ["github-actions"],
+      matchPackageNames: ["UCL-MIRSG/*"],
+      minimumReleaseAge: null,
+    },
+    {
+      description: "Disable minimum release age checks for own pre-commit hooks",
+      matchManagers: ["pre-commit"],
+      matchPackageNames: ["UCL-MIRSG/*"],
+      minimumReleaseAge: null,
+    },
   ],
 }

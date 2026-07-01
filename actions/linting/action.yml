@@ -15,12 +15,14 @@ runs:
   using: composite
   steps:
     - name: Checkout source
-      uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+      uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
       with:
         persist-credentials: false
+        ref: ${{ github.ref }}
+        repository: ${{ github.repository }}
 
     - name: Cache ansible & prek
-      uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
+      uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
       with:
         path: |-
           ~/.ansible
@@ -34,14 +36,14 @@ runs:
       if: inputs.ansible-roles-config != 'missing'
 
     - name: Cache prek
-      uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
+      uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
       with:
         path: ~/.cache/prek
         key: cache-${{ hashFiles(inputs.pre-commit-config) }}
       if: inputs.ansible-roles-config == 'missing'
 
     - name: Set up uv
-      uses: astral-sh/setup-uv@37802adc94f370d6bfd71619e3f0bf239e1f3b78 # v7
+      uses: astral-sh/setup-uv@fac544c07dec837d0ccb6301d7b5580bf5edae39 # v8.2.0
       with:
         activate-environment: true
         python-version: 3.14
@@ -63,7 +65,7 @@ runs:
       if: inputs.ansible-roles-config != 'missing'
 
     - name: Set up terraform
-      uses: hashicorp/setup-terraform@b9cd54a3c349d3f38e8881555d616ced269862dd # v3
+      uses: hashicorp/setup-terraform@dfe3c3f87815947d99a8997f908cb6525fc44e9e # v4.0.1
 
     - name: Run prek
       shell: bash
