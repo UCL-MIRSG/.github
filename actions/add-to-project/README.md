@@ -10,9 +10,12 @@ jobs:
     runs-on: ubuntu-slim
     steps:
       - uses: UCL-MIRSG/.github/actions/add-to-project@vx
+        env:
+          APP_ID: ${{ secrets.APP_ID }}
+          APP_PEM: ${{ secrets.APP_PEM }}
         with:
-          app-id: ${{ secrets.APP_ID }} # zizmor: ignore[secrets-outside-env]
-          app-pem: ${{ secrets.APP_PEM }} # zizmor: ignore[secrets-outside-env]
+          app-id: ${{ env.APP_ID }}
+          app-pem: ${{ env.APP_PEM }}
 ```
 
 where `x` is the `major` version of the action. If a different project board is
@@ -26,9 +29,12 @@ jobs:
     runs-on: ubuntu-slim
     steps:
       - uses: UCL-MIRSG/.github/actions/add-to-project@vx
+        env:
+          APP_ID: ${{ secrets.APP_ID }}
+          APP_PEM: ${{ secrets.APP_PEM }}
         with:
-          app-id: ${{ secrets.APP_ID }} # zizmor: ignore[secrets-outside-env]
-          app-pem: ${{ secrets.APP_PEM }} # zizmor: ignore[secrets-outside-env]
+          app-id: ${{ env.APP_ID }}
+          app-pem: ${{ env.APP_PEM }}
           project-url: project_board_url
 ```
 

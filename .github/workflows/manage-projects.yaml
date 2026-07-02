@@ -19,6 +19,9 @@ jobs:
           repository: ${{ github.repository }}
 
       - uses: ./actions/add-to-project
+        env:
+          APP_ID: ${{ secrets.APP_ID }}
+          APP_PEM: ${{ secrets.APP_PEM }}
         with:
-          app-id: ${{ secrets.APP_ID }} # zizmor: ignore[secrets-outside-env]
-          app-pem: ${{ secrets.APP_PEM }} # zizmor: ignore[secrets-outside-env]
+          app-id: ${{ env.APP_ID }}
+          app-pem: ${{ env.APP_PEM }}

@@ -23,9 +23,11 @@ jobs:
           repository: ${{ github.repository }}
 
       - uses: ./actions/links
+        env:
+          APP_PEM: ${{ secrets.LINKS_PRIVATE_KEY }}
         with:
           app-id: ${{ vars.LINKS_APP_ID }}
-          app-pem: ${{ secrets.LINKS_PRIVATE_KEY }} # zizmor: ignore[secrets-outside-env]
+          app-pem: ${{ env.APP_PEM }}
           lychee-args:
             --no-progress --verbose . --exclude
             https://github.com/orgs/UCL-MIRSG/projects/3

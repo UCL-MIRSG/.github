@@ -16,22 +16,26 @@ jobs:
     steps:
       - name: Release
         uses: UCL-MIRSG/.github/actions/maven/release@vx
+        env:
+          ACCESS_TOKEN: ${{ secrets.GITHUB_ACCESS_TOKEN }}
+          GPG_KEY_ID: ${{ secrets.GITHUB_GPG_KEY_ID }}
+          GPG_KEY: ${{ secrets.GITHUB_GPG_KEY }}
+          MAVEN_REPO_SERVER_ID: ${{ secrets.MVN_REPO_PRIVATE_REPO_USER }
+          MAVEN_REPO_SERVER_PASSWORD: ${{ secrets.MVN_REPO_PRIVATE_REPO_PASSWORD }}
+          MAVEN_REPO_SERVER_USERNAME: ${{ secrets.MVN_REPO_PRIVATE_REPO_USER }}
         with:
-          access-token: ${{ secrets.GITHUB_ACCESS_TOKEN }} # zizmor: ignore[secrets-outside-env]
+          access-token: ${{ env.ACCESS_TOKEN }}
           git-release-bot-email: release-bot@example.com
           git-release-bot-name: release-bot
           gpg-enabled: true
-          gpg-key-id: ${{ secrets.GITHUB_GPG_KEY_ID }} # zizmor: ignore[secrets-outside-env]
-          gpg-key: ${{ secrets.GITHUB_GPG_KEY }} # zizmor: ignore[secrets-outside-env]
+          gpg-key-id: ${{ secrets.GPG_KEY_ID }}
+          gpg-key: ${{ secrets.GPG_KEY }}
           maven-args:
             -Dmaven.javadoc.skip=true -DskipTests -DskipITs -Ddockerfile.skip
             -DdockerCompose.skip
-          maven-repo-server-id: f${{ secrets.MVN_REPO_PRIVATE_REPO_USER }} # zizmor: ignore[secrets-outside-env]
-          maven-repo-server-password:
-            # prettier-ignore-start
-            ${{ secrets.MVN_REPO_PRIVATE_REPO_PASSWORD }} # zizmor: ignore[secrets-outside-env]
-            # prettier-ignore-end
-          maven-repo-server-username: ${{ secrets.MVN_REPO_PRIVATE_REPO_USER }} # zizmor: ignore[secrets-outside-env]
+          maven-repo-server-id: ${{ env.MAVEN_REPO_SERVER_ID }}
+          maven-repo-server-password: ${{ env.MAVEN_REPO_SERVER_PASSWORD }}
+          maven-repo-server-username: ${{ env.MAVEN_REPO_SERVER_USERNAME }}
           release-branch-name: main
 ```
 

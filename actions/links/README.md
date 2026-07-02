@@ -11,9 +11,11 @@ jobs:
     timeout-minutes: 2
     steps:
       - uses: UCL-MIRSG/.github/actions/links@vx
+        env:
+          APP_PEM: ${{ secrets.LINKS_PRIVATE_KEY }}
         with:
           app-id: ${{ vars.LINKS_APP_ID }}
-          app-pem: ${{ secrets.LINKS_PRIVATE_KEY }} # zizmor: ignore[secrets-outside-env]
+          app-pem: ${{ env.APP_PEM }}
 ```
 
 where `x` is the `major` version of the action. If custom link checking is
@@ -27,8 +29,10 @@ jobs:
     runs-on: ubuntu-slim
     steps:
       - uses: UCL-MIRSG/.github/actions/links@vx
+        env:
+          APP_PEM: ${{ secrets.LINKS_PRIVATE_KEY }}
         with:
           app-id: ${{ vars.LINKS_APP_ID }}
-          app-pem: ${{ secrets.LINKS_PRIVATE_KEY }} # zizmor: ignore[secrets-outside-env]
+          app-pem: ${{ env.APP_PEM }}
           lychee-args: --no-progress --verbose .
 ```

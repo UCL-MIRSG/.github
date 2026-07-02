@@ -10,9 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: UCL-MIRSG/.github/actions/terraform-docs@vx
+        env:
+          APP_PEM:  ${{ secrets.TERRAFORM_DOCS_APP_PRIVATE_KEY }}
         with:
           app-id: ${{ vars.TERRAFORM_DOCS_APP_ID }}
-          app-pem: ${{ secrets.TERRAFORM_DOCS_APP_PRIVATE_KEY }} # zizmor: ignore[secrets-outside-env]
+          app-pem: ${{ env.APP_PEM }}
           working-dir: ./provision
 ```
 
@@ -27,8 +29,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: UCL-MIRSG/.github/actions/terraform-docs@vx
+        env:
+          APP_PEM:  ${{ secrets.TERRAFORM_DOCS_APP_PRIVATE_KEY }}
         with:
           app-id: ${{ vars.TERRAFORM_DOCS_APP_ID }}
-          app-pem: ${{ secrets.TERRAFORM_DOCS_APP_PRIVATE_KEY }} # zizmor: ignore[secrets-outside-env]
+          app-pem: ${{ env.APP_PEM }}
           find-dir: .
 ```
