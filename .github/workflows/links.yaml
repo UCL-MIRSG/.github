@@ -24,7 +24,7 @@ jobs:
 
       - uses: ./actions/links
         env:
-          APP_PEM: ${{ secrets.LINKS_PRIVATE_KEY }}
+          APP_PEM: ${{ secrets.LINKS_PRIVATE_KEY }} # zizmor: ignore[secrets-outside-env]
         with:
           app-id: ${{ vars.LINKS_APP_ID }}
           app-pem: ${{ env.APP_PEM }}

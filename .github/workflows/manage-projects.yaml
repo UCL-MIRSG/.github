@@ -20,8 +20,8 @@ jobs:
 
       - uses: ./actions/add-to-project
         env:
-          APP_ID: ${{ secrets.APP_ID }}
-          APP_PEM: ${{ secrets.APP_PEM }}
+          APP_ID: ${{ secrets.APP_ID }} # zizmor: ignore[secrets-outside-env]
+          APP_PEM: ${{ secrets.APP_PEM }} # zizmor: ignore[secrets-outside-env]
         with:
           app-id: ${{ env.APP_ID }}
           app-pem: ${{ env.APP_PEM }}

@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: UCL-MIRSG/.github/actions/terraform-docs@vx
         env:
-          APP_PEM:  ${{ secrets.TERRAFORM_DOCS_APP_PRIVATE_KEY }}
+          APP_PEM: ${{ secrets.TERRAFORM_DOCS_APP_PRIVATE_KEY }}
         with:
           app-id: ${{ vars.TERRAFORM_DOCS_APP_ID }}
           app-pem: ${{ env.APP_PEM }}
@@ -30,7 +30,7 @@ jobs:
     steps:
       - uses: UCL-MIRSG/.github/actions/terraform-docs@vx
         env:
-          APP_PEM:  ${{ secrets.TERRAFORM_DOCS_APP_PRIVATE_KEY }}
+          APP_PEM: ${{ secrets.TERRAFORM_DOCS_APP_PRIVATE_KEY }}
         with:
           app-id: ${{ vars.TERRAFORM_DOCS_APP_ID }}
           app-pem: ${{ env.APP_PEM }}
