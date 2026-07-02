@@ -20,7 +20,7 @@ jobs:
           ACCESS_TOKEN: ${{ secrets.GITHUB_ACCESS_TOKEN }}
           GPG_KEY_ID: ${{ secrets.GITHUB_GPG_KEY_ID }}
           GPG_KEY: ${{ secrets.GITHUB_GPG_KEY }}
-          MAVEN_REPO_SERVER_ID: ${{ secrets.MVN_REPO_PRIVATE_REPO_USER }
+          MAVEN_REPO_SERVER_ID: ${{ secrets.MVN_REPO_PRIVATE_REPO_USER }}
           MAVEN_REPO_SERVER_PASSWORD: ${{ secrets.MVN_REPO_PRIVATE_REPO_PASSWORD }}
           MAVEN_REPO_SERVER_USERNAME: ${{ secrets.MVN_REPO_PRIVATE_REPO_USER }}
         with:
