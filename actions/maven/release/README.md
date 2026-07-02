@@ -28,8 +28,8 @@ jobs:
           git-release-bot-email: release-bot@example.com
           git-release-bot-name: release-bot
           gpg-enabled: true
-          gpg-key-id: ${{ secrets.GPG_KEY_ID }}
-          gpg-key: ${{ secrets.GPG_KEY }}
+          gpg-key-id: ${{ env.GPG_KEY_ID }}
+          gpg-key: ${{ env.GPG_KEY }}
           maven-args:
             -Dmaven.javadoc.skip=true -DskipTests -DskipITs -Ddockerfile.skip
             -DdockerCompose.skip
