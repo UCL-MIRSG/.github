@@ -65,3 +65,6 @@ If one requires a specific version of Ansible, then use the
 By default, the action will default to `molecule test`, if running a specific
 command is required, then use the `molecule_command` argument, i.e.
 `molecule_command: converge`.
+
+If a specific Python version is required, use the `python_version` argument,
+i.e. `python_version: "3.12"`. The default is `"3.14"`.
