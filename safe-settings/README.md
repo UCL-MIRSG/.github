@@ -56,4 +56,4 @@ suborgrepos:
 ```
 
 at the top of the file. Further explanation can be found in the
-[Safe-Settings issues](https://github.com/github/safe-settings/issues/553#issuecomment-2552578978).
+[Safe-Settings issues](https://github.com/github-community-projects/safe-settings/issues/553#issuecomment-2552578978).
