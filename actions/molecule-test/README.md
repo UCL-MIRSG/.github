@@ -67,4 +67,13 @@ command is required, then use the `molecule_command` argument, i.e.
 `molecule_command: converge`.
 
 If a specific Python version is required, use the `python_version` argument,
-i.e. `python_version: "3.12"`. The default is `"3.14"`.
+i.e. `python_version: "3.12"`. This overrides the Python version uv uses.
+
+If `python_version` is not provided, [uv](https://docs.astral.sh/uv/) discovers
+a Python version as follows:
+
+1. A `.python-version` file in the repository, if present
+2. The `requires-python` field in `pyproject.toml`, if present
+3. An existing Python installation on the runner (e.g. the system Python on
+   GitHub-hosted runners)
+4. Failing all of the above, uv downloads the latest stable Python version

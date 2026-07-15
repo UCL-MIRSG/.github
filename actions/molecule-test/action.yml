@@ -26,8 +26,8 @@ inputs:
     description: Command to run with molecule
     default: test
   python_version:
-    description: Python version to use
-    default: "3.14"
+    description: Python version to use (optional)
+    required: false
 
 runs:
   using: composite
