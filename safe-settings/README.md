@@ -1,27 +1,27 @@
 # Safe-Settings
 
-[Safe-Settings](https://github.com/github/safe-settings) is a way to manage
-policy-as-code and apply repository settings across the organisation. A
-[GitHub App](https://github.com/apps/mirsg-safe-settings) has been set up which
-the [GitHub Action](../.github/workflows/safe-settings.yaml) uses to apply the
-settings on a cron schedule.
+[Safe-Settings](https://github.com/github-community-projects/safe-settings) is a
+way to manage policy-as-code and apply repository settings across the
+organisation. A [GitHub App](https://github.com/apps/mirsg-safe-settings) has
+been set up which the [GitHub Action](../.github/workflows/safe-settings.yaml)
+uses to apply the settings on a cron schedule.
 
 ## Configuration Files
 
 There are four types of settings that can be applied:
 
-- [Deployment](https://github.com/github/safe-settings/blob/main-enterprise/docs/sample-settings/sample-deployment-settings.yml)
+- [Deployment](https://github.com/github-community-projects/safe-settings/blob/main-enterprise/docs/sample-settings/sample-deployment-settings.yml)
   which defines deployment and runtime settings.
-- [Organisation](https://github.com/github/safe-settings/blob/main-enterprise/docs/sample-settings/settings.yml)
+- [Organisation](https://github.com/github-community-projects/safe-settings/blob/main-enterprise/docs/sample-settings/settings.yml)
   which can be used to define org-level settings.
-- [Repository](https://github.com/github/safe-settings/blob/main-enterprise/docs/sample-settings/repo.yml)
+- [Repository](https://github.com/github-community-projects/safe-settings/blob/main-enterprise/docs/sample-settings/repo.yml)
   which can be used to define repo-level settings.
-- [Suborganisation](https://github.com/github/safe-settings/blob/main-enterprise/docs/sample-settings/suborg.yml)
+- [Suborganisation](https://github.com/github-community-projects/safe-settings/blob/main-enterprise/docs/sample-settings/suborg.yml)
   which can be used to define suborganisation-level settings.
 
 Beyond these example configurations one can read more about potential settings
 to apply in the
-[documentation](https://github.com/github/safe-settings/tree/main-enterprise/docs/github-settings).
+[documentation](https://github.com/github-community-projects/safe-settings/tree/main-enterprise/docs/github-settings).
 The precedence order for configuration is `repository` > `suborganisation` >
 `organisation`.
 
