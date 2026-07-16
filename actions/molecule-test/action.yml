@@ -25,6 +25,9 @@ inputs:
   molecule_command:
     description: Command to run with molecule
     default: test
+  python_version:
+    description: Python version to use (optional)
+    required: false
 
 runs:
   using: composite
@@ -41,7 +44,7 @@ runs:
       uses: astral-sh/setup-uv@fac544c07dec837d0ccb6301d7b5580bf5edae39 # v8.2.0
       with:
         activate-environment: true
-        python-version: 3.14
+        python-version: ${{ inputs.python_version }}
 
     - name: Install dependencies
       shell: bash
