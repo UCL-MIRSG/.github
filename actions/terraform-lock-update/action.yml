@@ -22,7 +22,7 @@ runs:
         private-key: ${{ inputs.app-pem }}
 
     - name: Checkout source
-      uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+      uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
       with:
         persist-credentials: true
         ref: ${{ github.head_ref || github.ref_name }}
@@ -46,7 +46,7 @@ runs:
         done
 
     - name: Commit updated lock files
-      uses: stefanzweifel/git-auto-commit-action@04702edda442b2e678b25b537cec683a1493fcb9 # v7.1.0
+      uses: stefanzweifel/git-auto-commit-action@4a55954c782fc1ea30b9056cd3e7a2b40ca8887d # v7.2.0
       with:
         commit_message: update terraform lock file for both platforms
         file_pattern: "**/.terraform.lock.hcl"

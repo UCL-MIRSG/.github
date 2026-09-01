@@ -15,14 +15,14 @@ runs:
   using: composite
   steps:
     - name: Checkout source
-      uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+      uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
       with:
         persist-credentials: false
         ref: ${{ github.ref }}
         repository: ${{ github.repository }}
 
     - name: Cache ansible & prek
-      uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
+      uses: actions/cache@caa296126883cff596d87d8935842f9db880ef25 # v5.1.0
       with:
         path: |-
           ~/.ansible
@@ -36,14 +36,14 @@ runs:
       if: inputs.ansible-roles-config != 'missing'
 
     - name: Cache prek
-      uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
+      uses: actions/cache@caa296126883cff596d87d8935842f9db880ef25 # v5.1.0
       with:
         path: ~/.cache/prek
         key: cache-${{ hashFiles(inputs.pre-commit-config) }}
       if: inputs.ansible-roles-config == 'missing'
 
     - name: Set up uv
-      uses: astral-sh/setup-uv@fac544c07dec837d0ccb6301d7b5580bf5edae39 # v8.2.0
+      uses: astral-sh/setup-uv@11f9893b081a58869d3b5fccaea48c9e9e46f990 # v8.3.2
       with:
         activate-environment: true
         python-version: 3.14
