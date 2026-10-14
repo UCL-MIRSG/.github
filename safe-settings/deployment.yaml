@@ -1,3 +1,4 @@
 # https://github.com/github-community-projects/safe-settings/blob/main-enterprise/docs/sample-settings/sample-deployment-settings.yml
 ---
 restrictedRepos:
+  exclude:
