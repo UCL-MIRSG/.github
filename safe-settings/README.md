@@ -1,10 +1,10 @@
 # Safe-Settings
 
-[Safe-Settings](https://github.com/github-community-projects/safe-settings) is a way to manage
-policy-as-code and apply repository settings across the organisation. A
-[GitHub App](https://github.com/apps/mirsg-safe-settings) has been set up which
-the [GitHub Action](../.github/workflows/safe-settings.yaml) uses to apply the
-settings on a cron schedule.
+[Safe-Settings](https://github.com/github-community-projects/safe-settings) is a
+way to manage policy-as-code and apply repository settings across the
+organisation. A [GitHub App](https://github.com/apps/mirsg-safe-settings) has
+been set up which the [GitHub Action](../.github/workflows/safe-settings.yaml)
+uses to apply the settings on a cron schedule.
 
 ## Configuration Files
 

@@ -25,21 +25,26 @@ inputs:
   molecule_command:
     description: Command to run with molecule
     default: test
+  python_version:
+    description: Python version to use (optional)
+    required: false
 
 runs:
   using: composite
   steps:
     - name: Check out the codebase
-      uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+      uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       with:
         path: ${{ inputs.checkout_path }}
         persist-credentials: false
+        ref: ${{ github.ref }}
+        repository: ${{ github.repository }}
 
     - name: Set up uv
       uses: astral-sh/setup-uv@fac544c07dec837d0ccb6301d7b5580bf5edae39 # v8.2.0
       with:
         activate-environment: true
-        python-version: 3.14
+        python-version: ${{ inputs.python_version }}
 
     - name: Install dependencies
       shell: bash
