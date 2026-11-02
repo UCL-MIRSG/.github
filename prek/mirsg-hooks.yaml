@@ -93,6 +93,7 @@ repos:
           - --disable=MD013
           - --disable=MD031
           - --disable=MD033
+          - --disable=MD060
           - --dot
           - --fix
   - repo: https://github.com/Lucas-C/pre-commit-hooks
