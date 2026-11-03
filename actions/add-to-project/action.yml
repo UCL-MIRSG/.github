@@ -23,6 +23,8 @@ runs:
       uses: actions/create-github-app-token@64ab729a6294000f5aa4a4bc0b73d1f32bc45510 # v3.3.0
       with:
         app-id: ${{ inputs.app-id }}
+        permission-issues: read
+        permission-organization-projects: write
         private-key: ${{ inputs.app-pem }}
 
     - name: Get project data
