@@ -22,7 +22,7 @@ jobs:
           ref: ${{ github.ref }}
           repository: ${{ github.repository }}
 
-      - uses: ./actions/links
+      - uses: ./actions/links # zizmor: ignore[self-repository]
         with:
           app-id: ${{ vars.LINKS_APP_ID }}
           app-pem: ${{ secrets.LINKS_PRIVATE_KEY }} # zizmor: ignore[secrets-outside-env]
