@@ -1,0 +1,9 @@
+---
+rulesets:
+  - name: Tags
+    bypass_actors:
+      - actor_id: 5813795 # Repo release helper app
+        actor_type: Integration
+        bypass_mode: always
+    rules:
+      - type: creation
